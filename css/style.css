@@ -1,0 +1,413 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html,body{
+  height: 100%;
+}
+html a:hover{
+  cursor: url("../img/cursore.gif"), auto;
+}
+
+html a:active{
+  cursor: url("../img/cursore_2.gif"), auto;
+}
+body {
+  background-color: #171716;
+  margin: 0px;
+  font-family: 'Din', 'Sans-Bold';
+}
+
+@font-face {
+	font-family: 'Sans-Bold';
+	src: url("../fonts/Sans-Bold.ttf");
+}
+
+@font-face {
+	font-family: 'Din';
+	src: url("../fonts/Din.otf");
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header{
+  position: absolute;
+  margin-top: 2%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 95;
+}
+
+.header_logo, .header_mail{
+  min-width: 200px;
+}
+
+.header_logo{
+  padding-left: 50px;
+}
+
+.header_logo a{
+  position: absolute;
+  height: 48px;
+  width: 50px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  z-index: 100;
+}
+
+
+.header_mail{
+  padding: 6px 50px;
+  text-align: center;
+
+}
+
+.header_mail a{
+  color: #2ce7c7;
+  border: solid 2px #2ce7c7;;
+  border-radius: 10px;
+  padding: 12px 20px 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Sans-Bold';
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.header_mail a:hover{
+  color: #171716;
+  border-radius: 10px;
+  background-color: #2ce7c7;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.cover{
+  display: flex;
+  justify-content: center;
+  height:100%;
+  width: 100%;
+}
+
+h1{
+  font-weight: 100;
+  text-shadow: -8px 8px 0px #fa1b59;
+  line-height: 120pt;
+  text-align: center;
+  color: #2ce7c7;
+  font-family: "Sans-Bold";
+  margin: auto;
+  font-size: 10em;
+}
+
+
+/*--------------------------
+Inizio-pagina-about
+--------------------------*/
+
+
+.about{
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.quadrato_dx, .quadrato_sx{
+  text-align: center;
+  flex-basis: 50%;
+}
+
+.quadrato_sx{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.quadrato_sx_testo{
+  font-weight: 100;
+  color: #2ce7c7;
+  text-shadow: -5px 5px 0px #fa1b59;
+  font-size: 3em;
+  font-family: 'Sans-Bold';
+}
+
+.quadrato_dx{
+  margin: auto;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+}
+
+.quadrato_dx_testo{
+  text-align: justify;
+  font-size: 1.05em;
+  line-height: 20pt;
+  font-family: 'Din';
+  width: 65%;
+  color: #ecf0f1;
+}
+
+.cv a{
+  padding: 12px 20px 12px 20px;
+  color: #2ce7c7;
+  border: solid 2px #2ce7c7;
+  width: 100px;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'Sans-Bold';
+  color: #2ce7c7;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.cv a:hover{
+  border: solid 2px #2ce7c7;
+  color: #171716;
+  background-color: #2ce7c7;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+
+/*--------------------------
+Inizio-pagina-cosa_faccio
+--------------------------*/
+
+.cosa_faccio{
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  text-align: center;
+}
+
+.quadrato_branding, .quadrato_developer, .quadrato_creativity{
+  flex-basis: 33%;
+}
+
+.contenuto_branding, .contenuto_developer, .contenuto_creativity{
+  margin-top: 100px;
+}
+
+
+.icona_branding{
+  height: 90px;
+  background-image: url("../img/icone_branding.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.testo_branding{
+  font-family: 'Din';
+  margin: auto;
+  margin-top: 50px;
+  text-align: justify;
+  width: 55%;
+  line-height: 20pt;
+}
+
+.icona_developer{
+  height: 90px;
+  background-image: url("../img/icone_developer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.testo_developer{
+  font-family: 'Din';
+  margin: auto;
+  margin-top: 50px;
+  text-align: justify;
+  width: 55%;
+  line-height: 20pt;
+}
+
+.icona_creativity{
+
+  height: 90px;
+  background-image: url("../img/icone_creativity.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.testo_creativity{
+  font-family: 'Din';
+  margin: auto;
+  margin-top: 50px;
+  text-align: justify;
+  width: 55%;
+  line-height: 20pt;
+}
+
+h3{
+  font-weight: 100;
+  color: white;
+  font-family: 'Sans-Bold';
+  font-size: 2em;
+  text-align: center;
+}
+
+p{
+  color: white;
+}
+
+/*--------------------------
+Inizio-pagina-portfolio
+--------------------------*/
+
+
+.contact_me{
+  width: 100%;
+  display: inline-block;
+  height: 600px;
+  text-align: center;
+}
+
+.testo_contact_me{
+  margin-top: 50px;
+}
+
+h5{
+  color: white;
+  font-family: 'Sans-Bold';
+  font-size: 2em;
+  text-align: center;
+  font-weight: 100;
+}
+
+.titolo_contact_me{
+  margin-top: 140px;
+}
+
+.titolo_contact_me a{
+  font-family: 'Sans-Bold';
+  font-size: 7em;
+  text-decoration: none;
+  color: #2ce7c7;
+}
+
+.titolo_contact_me a:hover{
+  text-shadow: -5px 5px 0px #fa1b59;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+
+
+
+/*--------------------------
+Smartphone
+--------------------------*/
+
+
+@media screen and (max-width: 885px){
+  h1{
+
+  }
+
+  .header{
+    margin-top: 5%;
+  }
+
+  .header_logo, .header_mail{
+    min-width: 50px;
+  }
+
+  .header_logo{
+    padding-left: 25px;
+  }
+
+  .header_mail{
+    padding-right: 25px;
+  }
+
+.quadrato_sx{
+  display: none;
+}
+
+  .quadrato_dx, .quadrato_sx{
+    flex-basis: 100%;
+  }
+
+  .quadrato_dx_testo{
+    text-align: justify;
+    font-size: 1.05em;
+    line-height: 20pt;
+    font-family: 'Roboto-Light';
+    width: 65%;
+    color: #ecf0f1;
+  }
+
+  h2{
+    display: none;
+  }
+
+  .cosa_faccio{
+    height: 1200px;
+  }
+
+  .quadrato_branding, .quadrato_developer, .quadrato_creativity{
+    flex-basis: 100%;
+    height: 400px;
+  }
+
+  .contenuto_branding, .contenuto_developer, .contenuto_creativity{
+    margin-top: 40px;
+  }
+
+}
+
+
+@media screen and (max-width: 650px){
+
+  h1{
+    font-size: 7em;
+  }
+}
+
+
+@media screen and (max-width: 500px){
+
+  h1{
+    font-size: 4em;
+  }
+
+  .cosa_faccio{
+  }
+
+  .contenuto_branding, .contenuto_developer, .contenuto_creativity{
+    height: 100px;
+  }
+
+}
+
+
+
+/*--------------------------
+End-Smartphone
+--------------------------*/
+
+
+
+!.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: left;
+  height: 0;
+}

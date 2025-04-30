@@ -17,12 +17,13 @@ body {background-color: #171716; margin: 0px;}
 /*-------------------INTRO-------------------*/
 		
 		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('img/img-lorenzo-01.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; display: flex; flex-wrap: wrap; width: 100%;}
+		#intro::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(23, 23, 22, 0.5); /* sfondo scuro semi-trasparente */ z-index: 1;}
 			.img-intro {height: auto;}
 
-		  .menuuu-law{display: flex; flex-wrap: wrap; justify-content: center; text-align: left; overflow: hidden; position: fixed; width: 100%; padding: 20px; background-color: #171716;}
+		  .menuuu-law{display: flex; flex-wrap: wrap; justify-content: center; text-align: left; overflow: hidden; position: fixed; width: 100%; background-color: rgba(23, 23, 22, 0.95); z-index: 10;}
 		    .dropdown-law-content a:hover{color: #1cd860;}
 		    .testoaccordion-law {margin-top: 0;}
-		    .dropdown-law {position: relative; display: inline-block; padding: 20px;}
+		    .dropdown-law {position: relative; display: inline-block; padding: 10px; margin: 10px;}
 		    .dropbtn-law {color: #edf2f2 !important; font-size: 14px; font-family: 'Plus Jakarta Sans'; border: none; /*text-transform: uppercase;*/ cursor: pointer; margin: 0; font-weight: 600; line-height: normal;}
 		    .dropbtn-law:hover{color: #2ce7c7 !important;}
 		    /*.dropdown-law-content {display: none; position: absolute; min-width: 160px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2); z-index: 20;}
@@ -31,7 +32,7 @@ body {background-color: #171716; margin: 0px;}
 		    .dropdown-law:hover .dropdown-law-content {display: block;}
 		    /*.dropdown-law:hover .dropbtn-law {background-color: #1ed760;}*/
 		  
-		  .contengo-titolo-intro{display: flex; justify-content: center; align-items: center; width: 100%;}
+		  .contengo-titolo-intro{display: flex; justify-content: center; align-items: center; width: 100%; z-index: 2;}
 		  	.titolo-intro{font-family: 'Plus Jakarta Sans'; font-size: 150px; color: #2ce7c7; text-shadow: -8px 8px 0px #fa1b59; text-align: center; margin: 0;line-height: 150px;}
    
 /*-------------------FINE INTRO-------------------*/
@@ -92,6 +93,7 @@ body {background-color: #171716; margin: 0px;}
 	  .more-contenuto{width: 100%;}
 		.testo-more {} 
 	  .more-contenuto{margin-bottom: 20px;}
+	  .dropdown-law{padding: 7px; margin: 5px;}
 	}
 
 	@media only screen and (max-width: 375px) {

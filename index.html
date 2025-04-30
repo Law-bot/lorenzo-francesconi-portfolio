@@ -39,11 +39,11 @@ body {background-color: #171716; margin: 0px;}
 
   #about{}
   	.contengo-about{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; width: 100%;}
-  		.contenuto-about{}
-  		.titolo-about{font-size: 40px; color: #2ce7c7; width: 100%; margin: 0; margin-top: 150px;}
+  		.contenuto-about{text-align: center; width: 50%;}
+  		.titolo-about{font-size: 40px; color: #2ce7c7; margin: 0; margin-top: 150px;}
   			.font-web{font-family: 'Courier'; font-weight: 100; color: #fa1b59;}
   			.font-designer{}
-  		.testo-about{color: white; min-width: 400px; max-width: 800px; margin-top: 30px;}
+  		.testo-about{color: white; margin-top: 30px;}
   		.cv{margin-top: 30px; width: 100%;}
 	  	.download-cv {padding: 15px 30px; border: solid 2px #2ce7c7; width: 100px; border-radius: 10px; text-decoration: none; color: #2ce7c7; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; font-weight: 600; transition: all 0.5s ease-in-out;}
 	  	.download-cv:hover{color: #171716; border-radius: 10px; background-color: #2ce7c7; transition-duration: 0.5s; transition-timing-function: ease-in-out;}
@@ -72,19 +72,24 @@ body {background-color: #171716; margin: 0px;}
 /*-------------------FINE CONTACT ME-------------------*/
 
 	@media only screen and (max-width: 1060px) {
-		.testo-more {width: 200px;}
-		.testo-about{width: 80%;} 		
+		.testo-more {width: 80%;}
+		.testo-about{}		
+		.contenuto-about{width: 80%;}		
 	}
 
-	@media only screen and (max-width: 800px) {
-		.titolo-intro{font-size: 100px;line-height: 100px;}
+	@media only screen and (max-width: 768px) {
+		.titolo-intro{font-size: 100px; line-height: 100px;}
+		.send-mail-contact-me{font-size: 60px;}
+		.testo-more {width: 80%;}
+		.more-contenuto{width: 100%;}
+
 	}
 
 
-	@media only screen and (max-width: 600px) {
-		.titolo-intro {font-size: 100px; text-shadow: -6px 6px 0px #fa1b59;}
+	@media only screen and (max-width: 425px) {
+		.titolo-intro {font-size: 60px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
 	  .more-contenuto{width: 100%;}
-		.testo-more {width: 400px;} 
+		.testo-more {} 
 	  .more-contenuto{margin-bottom: 20px;}
 	}
 

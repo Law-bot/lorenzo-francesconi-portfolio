@@ -1,125 +1,191 @@
 <!doctype html>
-<html>
+<style type="text/css">
+	@charset "UTF-8";
+
+html,body{margin: 0; padding: 0; font-family: 'Plus Jakarta Sans'; scroll-behavior: smooth;}
+
+*, *::before, *::after {box-sizing: border-box;}
+
+a {text-decoration: none; transition: text-shadow 0.3s ease, transform 0.2s ease;}
+.ombra:hover {text-shadow: -2px 2px 0px #fa1b59; transition-duration: 0.3s; transition-timing-function: ease-in; cursor: url('img/cursore.gif'), auto; }
+
+
+body {background-color: #171716; margin: 0px;}
+
+	#law {}
+				
+/*-------------------INTRO-------------------*/
+		
+		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('.jpg'); background-position: center; background-repeat: no-repeat; display: flex; flex-wrap: wrap; width: 100%;}
+			.img-intro {height: auto;}
+
+		  .menuuu-law{display: flex; flex-wrap: wrap; justify-content: center; text-align: left; overflow: hidden; position: fixed;width: 100%; padding: 20px; background-color: #171716;}
+		    .dropdown-law-content a:hover{color: #1cd860;}
+		    .testoaccordion-law {margin-top: 0;}
+		    .dropdown-law {position: relative; display: inline-block; padding: 20px;}
+		    .dropbtn-law {color: #edf2f2 !important; font-size: 14px; font-family: 'Plus Jakarta Sans'; border: none; /*text-transform: uppercase;*/ cursor: pointer; margin: 0; font-weight: 600; line-height: normal;}
+		    .dropbtn-law:hover{color: #2ce7c7 !important;}
+		    /*.dropdown-law-content {display: none; position: absolute; min-width: 160px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2); z-index: 20;}
+		    .sottomenu-dropdown-law-content {color: #2d2d2d; padding: 10px 14px; text-decoration: none; display: block; font-size: 14px; font-weight: 700; line-height: normal; text-transform: uppercase;}
+		    .sottomenu-dropdown-law-content:hover {}*/
+		    .dropdown-law:hover .dropdown-law-content {display: block;}
+		    /*.dropdown-law:hover .dropbtn-law {background-color: #1ed760;}*/
+		  
+		  .contengo-titolo-intro{display: flex; justify-content: center; align-items: center; width: 100%;}
+		  	.titolo-intro{font-family: 'Plus Jakarta Sans'; font-size: 150px; color: #2ce7c7; text-shadow: -8px 8px 0px #fa1b59; text-align: center; margin: 0;line-height: 150px;}
+   
+/*-------------------FINE INTRO-------------------*/
+/*-------------------ABOUT-------------------*/
+
+  #about{}
+  	.contengo-about{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; width: 100%;}
+  		.contenuto-about{}
+  		.titolo-about{font-size: 40px; color: #2ce7c7; width: 100%; margin: 0; margin-top: 150px;}
+  			.font-web{font-family: 'Courier'; font-weight: 100; color: #fa1b59;}
+  			.font-designer{}
+  		.testo-about{color: white; min-width: 400px; max-width: 800px; margin-top: 30px;}
+  		.cv{margin-top: 30px; width: 100%;}
+	  	.download-cv {padding: 15px 30px; border: solid 2px #2ce7c7; width: 100px; border-radius: 10px; text-decoration: none; color: #2ce7c7; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; font-weight: 600; transition: all 0.5s ease-in-out;}
+	  	.download-cv:hover{color: #171716; border-radius: 10px; background-color: #2ce7c7; transition-duration: 0.5s; transition-timing-function: ease-in-out;}
+
+	  .more{display: flex; flex-wrap: wrap; justify-content: center; margin-top: 150px; text-align: center; width: 100%;}
+	  	.more-contenuto{width: 32%;}
+	  	.more-contenuto img {max-width: 100px;}
+  		.titolo-more{font-size: 30px; color: #edf2f2; margin: 0; text-transform: capitalize; margin-top: 10px; width: 100%;}
+  		.testo-more{color: white; margin-top: 30px; width: 300px; margin: auto; margin-top: 20px;}
+
+/*-------------------FINE ABOUT-------------------*/
+/*-------------------CONTACT ME-------------------*/
+
+	#contact-me{ margin-top: 80px;}
+		.contengo-contact-me{display: flex; flex-wrap: wrap; justify-content: center; text-align: center;}
+			.contenuto-contact-me{}
+				.titolo-contact-me{font-size: 25px; color: #edf2f2; width: 100%; margin: 0; margin-top: 150px;}
+				.mail-contact-me{margin-top: 120px;}
+				.send-mail-contact-me {font-size: 120px; font-weight: 700; color: #2ce7c7; text-decoration: none; transition: text-shadow 0.3s ease, transform 0.2s ease;}
+				.send-mail-contact-me:hover {text-shadow: -5px 5px 0px #fa1b59; transition-duration: 0.3s; transition-timing-function: ease-in; cursor: url('img/cursore.gif'), auto; /* cursore durante hover */ }
+
+		.contengo-firma{display: flex; flex-wrap: wrap; justify-content: center; text-align: center; margin-top: 150px; padding-bottom: 20px;}
+			.contenuto-firma{}
+				.firma{color: #edf2f2; font-size: 12px;}
+
+/*-------------------FINE CONTACT ME-------------------*/
+
+	@media only screen and (max-width: 1060px) {
+		.testo-more {width: 200px;}
+		.testo-about{width: 80%;} 		
+	}
+
+	@media only screen and (max-width: 800px) {
+		.titolo-intro{font-size: 100px;line-height: 100px;}
+	}
+
+
+	@media only screen and (max-width: 600px) {
+		.titolo-intro {font-size: 100px; text-shadow: -6px 6px 0px #fa1b59;}
+	  .more-contenuto{width: 100%;}
+		.testo-more {width: 400px;} 
+	  .more-contenuto{margin-bottom: 20px;}
+	}
+
+</style>
+
+<!---------html--------->
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width, initial-scale=1.0">
-<title>Prova Sito</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Lorenzo Francesconi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<!--link href="css/style.css" rel="stylesheet" type="text/css"-->
+</head>
 
 <body>
-	<header class="header">
-		<div class="header_logo">
-			<a href=""></a>
-		</div>
-		<div class="header_mail">
-			<a href="mailto:lorenzofrancesconi435@gmail.com">Contact Me</a>
-		</div>
-	</header>
-	<div class="cover">
-		<h1>Hello,<br>I'm Lorenzo.</h1>
-	</div>
+	<section class="law">
 
+		<section id="intro">
 
-	<!--///////////////////
+			<div class="menuuu-law">
+			 	<div class="dropdown-law">
+			    <a href="#intro" class="dropbtn-law ombra">home</a>
+			    <!--div class="dropdown-law-content">
+			      <a href="/marche/intex-ultra-xtr-frame"class="sottomenu-dropdown-law-content">grandi elettrodomestici</a>
+			      <a href="/marche/intex-prism-frame"class="sottomenu-dropdown-law-content">piccoli elettrodomestici</a>
+			    </div-->
+			  </div>
+			  <div class="dropdown-law">
+			    <a href="#about" class="dropbtn-law ombra">about</a>
+			  </div>
+			  <div class="dropdown-law">
+			    <a href="/promo/fuoritutto-informatica-offerte" class="dropbtn-law ombra">portfolio</a>
+			  </div>
+			  <div class="dropdown-law">
+			    <a href="mailto:lorenzofrancesconi435@gmail.com" class="dropbtn-law ombra">contact me</a>
+			  </div>
+			</div>
 
-		Inizio-pagina-about
-
-	////////////////////-->
-
-
-	<div id="chi_sono"></div>
-
-	<div class="about">
-		<div class="quadrato_sx">
-				<div class="quadrato_sx_testo">
-					<h2>Graphic<br>&#60;web&#62;<br>Designer</h2>
+			<div class="contengo-titolo-intro">
+				<div>
+					<h1 class="titolo-intro">Hello,<br> i'm Lorenzo.</h1>
 				</div>
-		</div>
-		<div class="quadrato_dx">
-			<div class="quadrato_dx_testo">
-				<p>Sono una persona che ama mettersi in gioco, ecco perchè voglio sempre il 110% della perfezione nei miei elaborati grafici. Ciò che mi rende unico, è il mio lato umano. Nei mesi trascorsi a Londra ho intrapreso uno stile di vita indipendente, superando tante difficoltà,. Grazie alla mia formazione e alle mie competenze ho acquisito ottime capacitá nei lavori individuali e in team, organizzando e rispettando i tempi di consegna.  Negli anni ho sviluppato uno mio stile personale; essenziale, pulito e di facile comprensione.
-				</p>
-					<br>
-					<div class="cv">
-						<a href="download/CV.pdf" target="_blank">Scarica CV</a>
-					</div>
+				<div class="img-sfondo">
+					<!--img src="img/homer.jpg" class="img-intro"-->
+				</div>
+			</div>
+		
+		</section>
+
+  <section id="about">
+
+  	<div class="contengo-about">
+	  	<div class="contenuto-about">
+				<h2 class="titolo-about">Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
+	    	<p class="testo-about">Sono una persona che ama mettersi in gioco, ecco perchè voglio sempre il 110% della perfezione nei miei elaborati grafici. Ciò che mi rende unico, è il mio lato umano. Nei mesi trascorsi a Londra ho intrapreso uno stile di vita indipendente, superando tante difficoltà,. Grazie alla mia formazione e alle mie competenze ho acquisito ottime capacitá nei lavori individuali e in team, organizzando e rispettando i tempi di consegna.  Negli anni ho sviluppato uno mio stile personale; essenziale, pulito e di facile comprensione.</p>  		
+	  	</div>
+	  	<div class="cv">
+	  		<a href="download/CV.pdf" target="_blank" class="download-cv no-hover-effect">Scarica CV</a>
+	  	</div>		  	
+	  	<div class="more">
+	  		<div class="more-contenuto">
+	  			<img src="img/icone-branding.png">	  			
+	  			<h2 class="titolo-more">branding</h2>
+	  			<p class="testo-more">L’idea giusta, con la giusta dose di creatività, il tutto condito dalla conoscenza approfondita dei programmi Adobe Photoshop, Illustrator, Indesign.</p>
+	  		</div>
+	  		<div class="more-contenuto">
+	  			<img src="img/icone-developer.png">
+	  			<h2 class="titolo-more">developer</h2>
+	  			<p class="testo-more">Prima la progettazione, poi lo sviluppo.<br>Mi abbuffo di codice HTML5, +CSS3 e jQuery, utilizzando software specifici come Sketch, Atom e Adobe XD.</p>
+	  		</div>
+	  		<div class="more-contenuto">
+	  			<img src="img/icone-creativity.png">
+	  			<h2 class="titolo-more">creativity</h2>
+	  			<p class="testo-more">Ogni lavoro è diverso, ciò che li accomuna è la creatività e lo studio per arrivare a un determinato risultato.<br>La differenza è che, studiosi si diventa, creativi si nasce!</p>
+	  		</div>	  		  	
+	  	</div>
+  	</div>
+  </section>
+
+	<section id="contact-me">
+
+		<div class="contengo-contact-me">
+			<div class="contenuto-contact-me">
+				<h3 class="titolo-contact-me">Let's make<br>something great</h3>
+				<div class="mail-contact-me">
+					<a href="mailto:lorenzofrancesconi435@gmail.com" class="send-mail-contact-me">Contact Me</a>
+				</div>
 			</div>
 		</div>
-	</div>
-
-
-	<!--///////////////////
-
-		Inizio-pagina-cosa-faccio
-
-	////////////////////-->
-
-
-	<div id="sezione_2"></div>
-
-<div class="cosa_faccio">
-
-	<div class="quadrato_branding">
-	<div class="contenuto_branding">
-			<div class="icona_branding">
+		<div class="contengo-firma">
+			<div class="contenuto-firma">
+				<p class="firma">Lorenzo Francesconi 2025</p>
 			</div>
-		<div class="testo_branding">
-			<h3>Branding</h3>
-			<p><br>L’idea giusta, con la giusta dose di creatività, il tutto condito dalla
-				conoscenza approfondita dei programmi Adobe Photoshop, Illustrator, Indesign.
-			</p>
-		</div>
-	</div>
-	</div>
+		</div>		
 
-	<div class="quadrato_developer">
-	<div class="contenuto_developer">
-		<div class="icona_developer">
-		</div>
-		<div class="testo_developer">
-			<h3>Developer</h3>
-			<p><br>Prima la progettazione, poi     lo sviluppo. Mi abbuffo di codice HTML5,
-				+CSS3 e jQuery, utilizzando software specifici come Sketch, Atom e Adobe XD.
-			</p>
-		</div>
-	</div>
-	</div>
+	</section>
 
-	<div class="quadrato_creativity">
-		<div class="contenuto_creativity">
-		<div class="icona_creativity">
-		</div>
-		<div class="testo_creativity">
-			<h3>Creativity</h3>
-			<p><br>Ogni lavoro è diverso, ciò che li accomuna è la creatività e lo studio
-				per arrivare a un determinato risultato. La differenza è che, studiosi
-				si diventa, creativi si nasce!
-			</p>
-		</div>
-	</div>
-	</div>
-
-</div>
-
-	<!--///////////////////
-
-		Inizio-pagina-contact-me
-
-	////////////////////-->
-
-<div id="contact_me_ancora"></div>
-
-	<div class="contact_me">
-		<div class="testo_contact_me">
-			<div class="titoletto_contact_me">
-				<h5>Let's make<br>something great!</h5>
-			</div>
-			<div class="titolo_contact_me">
-				<a href="mailto:lorenzofrancesconi435@gmail.com" class="mail_contact_me">Contact Me</a>
-			</div>
-		</div>
-	</div>
-
-
+	</section>
 </body>
 </html>

@@ -16,10 +16,10 @@ body {background-color: #171716; margin: 0px;}
 				
 /*-------------------INTRO-------------------*/
 		
-		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('.jpg'); background-position: center; background-repeat: no-repeat; display: flex; flex-wrap: wrap; width: 100%;}
+		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('img/img-lorenzo-01.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; display: flex; flex-wrap: wrap; width: 100%;}
 			.img-intro {height: auto;}
 
-		  .menuuu-law{display: flex; flex-wrap: wrap; justify-content: center; text-align: left; overflow: hidden; position: fixed;width: 100%; padding: 20px; background-color: #171716;}
+		  .menuuu-law{display: flex; flex-wrap: wrap; justify-content: center; text-align: left; overflow: hidden; position: fixed; width: 100%; padding: 20px; background-color: #171716;}
 		    .dropdown-law-content a:hover{color: #1cd860;}
 		    .testoaccordion-law {margin-top: 0;}
 		    .dropdown-law {position: relative; display: inline-block; padding: 20px;}
@@ -78,6 +78,7 @@ body {background-color: #171716; margin: 0px;}
 	}
 
 	@media only screen and (max-width: 768px) {
+
 		.titolo-intro{font-size: 100px; line-height: 100px;}
 		.send-mail-contact-me{font-size: 60px;}
 		.testo-more {width: 80%;}
@@ -87,11 +88,20 @@ body {background-color: #171716; margin: 0px;}
 
 
 	@media only screen and (max-width: 425px) {
-		.titolo-intro {font-size: 60px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
+		.titolo-intro {font-size: 80px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
 	  .more-contenuto{width: 100%;}
 		.testo-more {} 
 	  .more-contenuto{margin-bottom: 20px;}
 	}
+
+	@media only screen and (max-width: 375px) {
+		.titolo-intro {font-size: 70px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
+	}		
+
+	@media only screen and (max-width: 320px) {
+		.titolo-intro {font-size: 60px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
+	}
+
 
 </style>
 

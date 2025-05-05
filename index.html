@@ -38,11 +38,11 @@ body {background-color: #171716; margin: 0px;}
 /*-------------------FINE INTRO-------------------*/
 /*-------------------ABOUT-------------------*/
 
-  #about{}
+  #about{background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
   	.contengo-about{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; width: 100%;}
   		.contenuto-about{text-align: center; width: 50%;}
-  		.titolo-about{font-size: 40px; color: #2ce7c7; margin: 0; margin-top: 150px;}
-  			.font-web{font-family: 'Courier'; font-weight: 100; color: #fa1b59;}
+  		.titolo-about{font-size: 40px; color: #2ce7c7; margin: 0; text-shadow: -2px 2px 0px #fa1b59;}
+  			.font-web{font-family: 'Courier'; font-weight: 100; color: #fa1b59; text-shadow: none;}
   			.font-designer{}
   		.testo-about{color: white; margin-top: 30px;}
   		.cv{margin-top: 30px; width: 100%;}
@@ -56,12 +56,22 @@ body {background-color: #171716; margin: 0px;}
   		.testo-more{color: white; margin-top: 30px; width: 300px; margin: auto; margin-top: 20px;}
 
 /*-------------------FINE ABOUT-------------------*/
+/*-------------------PORTOFLIO-------------------*/
+
+	#portfolio {background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; /* Fa in modo che la sezione prenda tutta l'altezza della pagina */ }
+		.titolo-portfolio { font-size: 40px; color: #2ce7c7; margin-bottom: 50px; text-align: center; text-shadow: -2px 2px 0px #fa1b59; margin-top:100px;}
+			.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; justify-items: center; max-width: 1200px;  /* Imposta una larghezza massima per la griglia */ width: 100%; }
+				.portfolio-grid a { display: block; position: relative; overflow: hidden; }
+				.portfolio-grid img { width: 100%; height: auto; transition: transform 0.3s ease; }
+				.portfolio-grid a:hover img { transform: scale(1.05); }
+
+/*-------------------FINE PORTOFLIO-------------------*/
 /*-------------------CONTACT ME-------------------*/
 
-	#contact-me{ margin-top: 80px;}
+	#contact-me{ background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
 		.contengo-contact-me{display: flex; flex-wrap: wrap; justify-content: center; text-align: center;}
 			.contenuto-contact-me{}
-				.titolo-contact-me{font-size: 25px; color: #edf2f2; width: 100%; margin: 0; margin-top: 150px;}
+				.titolo-contact-me{font-size: 25px; color: #edf2f2; width: 100%; margin: 0;}
 				.mail-contact-me{margin-top: 120px;}
 				.send-mail-contact-me {font-size: 120px; font-weight: 700; color: #2ce7c7; text-decoration: none; transition: text-shadow 0.3s ease, transform 0.2s ease;}
 				.send-mail-contact-me:hover {text-shadow: -5px 5px 0px #fa1b59; transition-duration: 0.3s; transition-timing-function: ease-in; cursor: url('img/cursore.gif'), auto; /* cursore durante hover */ }
@@ -79,14 +89,11 @@ body {background-color: #171716; margin: 0px;}
 	}
 
 	@media only screen and (max-width: 768px) {
-
 		.titolo-intro{font-size: 100px; line-height: 100px;}
 		.send-mail-contact-me{font-size: 60px;}
 		.testo-more {width: 80%;}
 		.more-contenuto{width: 100%; margin-top: 50px;}
-
 	}
-
 
 	@media only screen and (max-width: 425px) {
 		.titolo-intro {font-size: 80px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
@@ -118,6 +125,8 @@ body {background-color: #171716; margin: 0px;}
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <!--link href="css/style.css" rel="stylesheet" type="text/css"-->
+<!-- Fancybox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">
 </head>
 
 <body>
@@ -137,11 +146,14 @@ body {background-color: #171716; margin: 0px;}
 			    <a href="#about" class="dropbtn-law ombra">about</a>
 			  </div>
 			  <div class="dropdown-law">
-			    <a href="/promo/fuoritutto-informatica-offerte" class="dropbtn-law ombra">portfolio</a>
+			    <a href="#portfolio" class="dropbtn-law ombra">portfolio</a>
 			  </div>
-			  <div class="dropdown-law">
+			  <!--div class="dropdown-law">
 			    <a href="mailto:lorenzofrancesconi435@gmail.com" class="dropbtn-law ombra">contact me</a>
-			  </div>
+			  </div-->
+			  <div class="dropdown-law">
+			    <a href="#contact-me" class="dropbtn-law ombra">contact me</a>
+			  </div>			  
 			</div>
 
 			<div class="contengo-titolo-intro">
@@ -185,6 +197,27 @@ body {background-color: #171716; margin: 0px;}
   	</div>
   </section>
 
+<section id="portfolio">
+
+    <div class="contengo-portfolio">
+        <h2 class="titolo-portfolio">Portfolio</h2>
+        <div class="portfolio-grid">
+            <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" alt="Manifesto pubblicitario Outlet"></a>
+            <a href="img/progetto-02.jpg" data-fancybox="gallery" data-caption="Gift Card Esselunga Yeppon"><img src="img/progetto-02-thumb.jpg" alt="Gift Card Esselunga Yeppon"></a>
+            <a href="img/progetto-03.jpg" data-fancybox="gallery" data-caption="Manifesto Fiera Bricoday"><img src="img/progetto-03-thumb.jpg" alt="Manifesto Fiera Bricoday"></a>
+            <a href="img/progetto-04.jpg" data-fancybox="gallery" data-caption="Flyer A5 Bricoday"><img src="img/progetto-04-thumb.jpg" alt="Flyer A5 Bricoday"></a>
+            <a href="img/progetto-05.jpg" data-fancybox="gallery" data-caption="Affissione Distributore Samplia Yeppon"><img src="img/progetto-05-thumb.jpg" alt="Affissione Distributore Samplia Yeppon"></a>
+            <a href="img/progetto-06.jpg" data-fancybox="gallery" data-caption="Business card Yeppon (category e aziendale)"><img src="img/progetto-06-thumb.jpg" alt="Business card Yeppon (category e aziendale)"></a>
+            <a href="img/progetto-07.jpg" data-fancybox="gallery" data-caption="Scheda prodotto Enel su Amazon Yeppon"><img src="img/progetto-07-thumb.jpg" alt="Scheda prodotto Enel su Amazon Yeppon"></a>
+            <a href="img/progetto-08.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su larepubblica.it"><img src="img/progetto-08-thumb.jpg" alt="Skin Yeppon su larepubblica.it"></a>            
+            <a href="img/progetto-09.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su dday.it"><img src="img/progetto-09-thumb.jpg" alt="Skin Yeppon su dday.it"></a>
+            <a href="img/progetto-10.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su La Gazzetta Dello Sport"><img src="img/progetto-10-thumb.jpg" alt="Skin Yeppon su La Gazzetta Dello Sport"></a>
+            <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
+        </div>
+    </div>
+
+</section>
+
 	<section id="contact-me">
 
 		<div class="contengo-contact-me">
@@ -204,5 +237,18 @@ body {background-color: #171716; margin: 0px;}
 	</section>
 
 	</section>
+
+	<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+
+<!-- Fancybox Initialization -->
+<script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        loop: true,
+        captions: true,
+    });
+</script>
+
 </body>
 </html>
+

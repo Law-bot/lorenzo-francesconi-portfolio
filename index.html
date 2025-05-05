@@ -16,7 +16,7 @@ body {background-color: #171716; margin: 0px;}
 				
 /*-------------------INTRO-------------------*/
 		
-		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('img/img-lorenzo-01.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; display: flex; flex-wrap: wrap; width: 100%;}
+		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('img/img-lorenzo-01.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; display: flex; flex-wrap: wrap; width: 100%; position: relative;}
 		#intro::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(23, 23, 22, 0.5); /* sfondo scuro semi-trasparente */ z-index: 1;}
 			.img-intro {height: auto;}
 
@@ -58,11 +58,11 @@ body {background-color: #171716; margin: 0px;}
 /*-------------------FINE ABOUT-------------------*/
 /*-------------------PORTOFLIO-------------------*/
 
-	#portfolio {background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; /* Fa in modo che la sezione prenda tutta l'altezza della pagina */ }
-		.titolo-portfolio { font-size: 40px; color: #2ce7c7; margin-bottom: 50px; text-align: center; text-shadow: -2px 2px 0px #fa1b59; margin-top:100px;}
-			.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; justify-items: center; max-width: 1200px;  /* Imposta una larghezza massima per la griglia */ width: 100%; }
+	#portfolio {background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; /* Fa in modo che la sezione prenda tutta l'altezza della pagina */ width: 95%; margin: auto;}
+		.titolo-portfolio {font-size: 40px; color: #2ce7c7; margin-bottom: 50px; text-align: center; text-shadow: -2px 2px 0px #fa1b59; margin-top:100px;}
+			.immagine-portfolio {max-width: 100%; height: auto; transition: transform 0.3s ease;}
+			.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; justify-items: center; /* Imposta una larghezza massima per la griglia */ width: 100%;}
 				.portfolio-grid a { display: block; position: relative; overflow: hidden; }
-				.portfolio-grid img { width: 100%; height: auto; transition: transform 0.3s ease; }
 				.portfolio-grid a:hover img { transform: scale(1.05); }
 
 /*-------------------FINE PORTOFLIO-------------------*/
@@ -85,7 +85,8 @@ body {background-color: #171716; margin: 0px;}
 	@media only screen and (max-width: 1060px) {
 		.testo-more {width: 80%;}
 		.testo-about{}		
-		.contenuto-about{width: 80%;}		
+		.contenuto-about{width: 80%;}
+		.portfolio-grid {}
 	}
 
 	@media only screen and (max-width: 768px) {
@@ -118,7 +119,7 @@ body {background-color: #171716; margin: 0px;}
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lorenzo Francesconi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -202,17 +203,17 @@ body {background-color: #171716; margin: 0px;}
     <div class="contengo-portfolio">
         <h2 class="titolo-portfolio">Portfolio</h2>
         <div class="portfolio-grid">
-            <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" alt="Manifesto pubblicitario Outlet"></a>
-            <a href="img/progetto-02.jpg" data-fancybox="gallery" data-caption="Gift Card Esselunga Yeppon"><img src="img/progetto-02-thumb.jpg" alt="Gift Card Esselunga Yeppon"></a>
-            <a href="img/progetto-03.jpg" data-fancybox="gallery" data-caption="Manifesto Fiera Bricoday"><img src="img/progetto-03-thumb.jpg" alt="Manifesto Fiera Bricoday"></a>
-            <a href="img/progetto-04.jpg" data-fancybox="gallery" data-caption="Flyer A5 Bricoday"><img src="img/progetto-04-thumb.jpg" alt="Flyer A5 Bricoday"></a>
-            <a href="img/progetto-05.jpg" data-fancybox="gallery" data-caption="Affissione Distributore Samplia Yeppon"><img src="img/progetto-05-thumb.jpg" alt="Affissione Distributore Samplia Yeppon"></a>
-            <a href="img/progetto-06.jpg" data-fancybox="gallery" data-caption="Business card Yeppon (category e aziendale)"><img src="img/progetto-06-thumb.jpg" alt="Business card Yeppon (category e aziendale)"></a>
-            <a href="img/progetto-07.jpg" data-fancybox="gallery" data-caption="Scheda prodotto Enel su Amazon Yeppon"><img src="img/progetto-07-thumb.jpg" alt="Scheda prodotto Enel su Amazon Yeppon"></a>
-            <a href="img/progetto-08.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su larepubblica.it"><img src="img/progetto-08-thumb.jpg" alt="Skin Yeppon su larepubblica.it"></a>            
-            <a href="img/progetto-09.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su dday.it"><img src="img/progetto-09-thumb.jpg" alt="Skin Yeppon su dday.it"></a>
-            <a href="img/progetto-10.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su La Gazzetta Dello Sport"><img src="img/progetto-10-thumb.jpg" alt="Skin Yeppon su La Gazzetta Dello Sport"></a>
-            <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
+            <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" class="immagine-portfolio" alt="Manifesto pubblicitario Outlet"></a>
+            <a href="img/progetto-02.jpg" data-fancybox="gallery" data-caption="Gift Card Esselunga Yeppon"><img src="img/progetto-02-thumb.jpg" class="immagine-portfolio" alt="Gift Card Esselunga Yeppon"></a>
+            <a href="img/progetto-03.jpg" data-fancybox="gallery" data-caption="Manifesto Fiera Bricoday"><img src="img/progetto-03-thumb.jpg" class="immagine-portfolio" alt="Manifesto Fiera Bricoday"></a>
+            <a href="img/progetto-04.jpg" data-fancybox="gallery" data-caption="Flyer A5 Bricoday"><img src="img/progetto-04-thumb.jpg" class="immagine-portfolio" alt="Flyer A5 Bricoday"></a>
+            <a href="img/progetto-05.jpg" data-fancybox="gallery" data-caption="Affissione Distributore Samplia Yeppon"><img src="img/progetto-05-thumb.jpg" class="immagine-portfolio" alt="Affissione Distributore Samplia Yeppon"></a>
+            <a href="img/progetto-06.jpg" data-fancybox="gallery" data-caption="Business card Yeppon (category e aziendale)"><img src="img/progetto-06-thumb.jpg" class="immagine-portfolio" alt="Business card Yeppon (category e aziendale)"></a>
+            <a href="img/progetto-07.jpg" data-fancybox="gallery" data-caption="Scheda prodotto Enel su Amazon Yeppon"><img src="img/progetto-07-thumb.jpg" class="immagine-portfolio" alt="Scheda prodotto Enel su Amazon Yeppon"></a>
+            <a href="img/progetto-08.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su larepubblica.it"><img src="img/progetto-08-thumb.jpg" class="immagine-portfolio" alt="Skin Yeppon su larepubblica.it"></a>            
+            <a href="img/progetto-09.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su dday.it"><img src="img/progetto-09-thumb.jpg" class="immagine-portfolio" alt="Skin Yeppon su dday.it"></a>
+            <a href="img/progetto-10.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su La Gazzetta Dello Sport"><img src="img/progetto-10-thumb.jpg" class="immagine-portfolio" alt="Skin Yeppon su La Gazzetta Dello Sport"></a>
+            <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" class="immagine-portfolio" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
         </div>
     </div>
 

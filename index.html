@@ -31,7 +31,12 @@ body {background-color: #171716; margin: 0px;}
 		    .sottomenu-dropdown-law-content:hover {}*/
 		    .dropdown-law:hover .dropdown-law-content {display: block;}
 		    /*.dropdown-law:hover .dropbtn-law {background-color: #1ed760;}*/
-		  
+
+			.hamburger { display: none; flex-direction: column; cursor: pointer; padding: 10px; z-index: 11; }
+			.hamburger span { height: 3px; width: 25px; background: #2ce7c7; margin: 4px 0; border-radius: 2px; transition: all 0.3s ease; }
+			.menuuu-law.active { display: flex !important; flex-direction: column; background-color: rgba(23, 23, 22, 0.95); }
+
+
 		  .contengo-titolo-intro{display: flex; justify-content: center; align-items: center; width: 100%; z-index: 2;}
 		  	.titolo-intro{font-family: 'Plus Jakarta Sans'; font-size: 150px; color: #2ce7c7; text-shadow: -8px 8px 0px #fa1b59; text-align: center; margin: 0;line-height: 150px;}
    
@@ -94,6 +99,7 @@ body {background-color: #171716; margin: 0px;}
 		.send-mail-contact-me{font-size: 60px;}
 		.testo-more {width: 80%;}
 		.more-contenuto{width: 100%; margin-top: 50px;}
+		#intro{margin-bottom: 40px;}
 	}
 
 	@media only screen and (max-width: 425px) {
@@ -102,6 +108,9 @@ body {background-color: #171716; margin: 0px;}
 		.testo-more {} 
 	  .more-contenuto{margin-bottom: 20px;}
 	  .dropdown-law{padding: 7px; margin: 5px;}
+		.hamburger { display: flex; position: fixed; top: 10px; right: 20px; }
+		.menuuu-law { display: none; flex-direction: column; align-items: center; position: fixed; right: 0; width: 100%; background-color: rgba(23, 23, 22, 0.95); padding: 20px 0;
+		.dropdown-law { width: 100%; text-align: center; padding: 10px 0; }	  
 	}
 
 	@media only screen and (max-width: 375px) {
@@ -128,12 +137,20 @@ body {background-color: #171716; margin: 0px;}
 <!--link href="css/style.css" rel="stylesheet" type="text/css"-->
 <!-- Fancybox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 	<section class="law">
 
 		<section id="intro">
+
+			<div class="hamburger" id="hamburger">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			</div>
 
 			<div class="menuuu-law">
 			 	<div class="dropdown-law">
@@ -159,7 +176,7 @@ body {background-color: #171716; margin: 0px;}
 
 			<div class="contengo-titolo-intro">
 				<div>
-					<h1 class="titolo-intro">Hello,<br> I'm Lorenzo.</h1>
+					<h1 class="titolo-intro" data-aos="fade-down">Hello,<br> I'm Lorenzo.</h1>
 				</div>
 				<div class="img-sfondo">
 					<!--img src="img/homer.jpg" class="img-intro"-->
@@ -168,28 +185,28 @@ body {background-color: #171716; margin: 0px;}
 		
 		</section>
 
-  <section id="about">
+  <section id="about" >
 
   	<div class="contengo-about">
-	  	<div class="contenuto-about">
-				<h2 class="titolo-about">Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
-	    	<p class="testo-about">Sono una persona che ama mettersi in gioco, ecco perchè voglio sempre il 110% della perfezione nei miei elaborati grafici. Ciò che mi rende unico, è il mio lato umano. Nei mesi trascorsi a Londra ho intrapreso uno stile di vita indipendente, superando tante difficoltà,. Grazie alla mia formazione e alle mie competenze ho acquisito ottime capacitá nei lavori individuali e in team, organizzando e rispettando i tempi di consegna.  Negli anni ho sviluppato uno mio stile personale; essenziale, pulito e di facile comprensione.</p>  		
+	  	<div class="contenuto-about"data-aos="fade-down">
+				<h2 class="titolo-about" >Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
+	    	<p class="testo-about">Sono una persona che ama mettersi in gioco, ecco perchè voglio sempre il 110% della perfezione nei miei elaborati grafici. Ciò che mi rende unico, è il mio lato umano. Nei mesi trascorsi a Londra ho intrapreso uno stile di vita indipendente, superando tante difficoltà. Grazie alla mia formazione e alle mie competenze ho acquisito ottime capacitá nei lavori individuali e in team, organizzando e rispettando i tempi di consegna.  Negli anni ho sviluppato uno mio stile personale; essenziale, pulito e di facile comprensione.</p>  		
 	  	</div>
-	  	<div class="cv">
+	  	<div class="cv"data-aos="fade-down">
 	  		<a href="download/CV.pdf" target="_blank" class="download-cv no-hover-effect">Scarica CV</a>
 	  	</div>		  	
 	  	<div class="more">
-	  		<div class="more-contenuto">
+	  		<div class="more-contenuto"data-aos="fade-right">
 	  			<img src="img/icone-branding.png">	  			
 	  			<h2 class="titolo-more">branding</h2>
 	  			<p class="testo-more">L’idea giusta, con la giusta dose di creatività, il tutto condito dalla conoscenza approfondita dei programmi Adobe Photoshop, Illustrator, Indesign.</p>
 	  		</div>
-	  		<div class="more-contenuto">
+	  		<div class="more-contenuto"data-aos="fade-down">
 	  			<img src="img/icone-developer.png">
 	  			<h2 class="titolo-more">developer</h2>
 	  			<p class="testo-more">Prima la progettazione, poi lo sviluppo.<br>Mi abbuffo di codice HTML5, +CSS3 e jQuery, utilizzando software specifici come Sketch, Atom e Adobe XD.</p>
 	  		</div>
-	  		<div class="more-contenuto">
+	  		<div class="more-contenuto"data-aos="fade-left">
 	  			<img src="img/icone-creativity.png">
 	  			<h2 class="titolo-more">creativity</h2>
 	  			<p class="testo-more">Ogni lavoro è diverso, ciò che li accomuna è la creatività e lo studio per arrivare a un determinato risultato.<br>La differenza è che, studiosi si diventa, creativi si nasce!</p>
@@ -200,26 +217,26 @@ body {background-color: #171716; margin: 0px;}
 
 <section id="portfolio">
 
-    <div class="contengo-portfolio">
+    <div class="contengo-portfolio"data-aos="fade-down">
         <h2 class="titolo-portfolio">Portfolio</h2>
         <div class="portfolio-grid">
-            <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" class="immagine-portfolio" alt="Manifesto pubblicitario Outlet"></a>
-            <a href="img/progetto-02.jpg" data-fancybox="gallery" data-caption="Gift Card Esselunga Yeppon"><img src="img/progetto-02-thumb.jpg" class="immagine-portfolio" alt="Gift Card Esselunga Yeppon"></a>
-            <a href="img/progetto-03.jpg" data-fancybox="gallery" data-caption="Manifesto Fiera Bricoday"><img src="img/progetto-03-thumb.jpg" class="immagine-portfolio" alt="Manifesto Fiera Bricoday"></a>
-            <a href="img/progetto-04.jpg" data-fancybox="gallery" data-caption="Flyer A5 Bricoday"><img src="img/progetto-04-thumb.jpg" class="immagine-portfolio" alt="Flyer A5 Bricoday"></a>
-            <a href="img/progetto-05.jpg" data-fancybox="gallery" data-caption="Affissione Distributore Samplia Yeppon"><img src="img/progetto-05-thumb.jpg" class="immagine-portfolio" alt="Affissione Distributore Samplia Yeppon"></a>
-            <a href="img/progetto-06.jpg" data-fancybox="gallery" data-caption="Business card Yeppon (category e aziendale)"><img src="img/progetto-06-thumb.jpg" class="immagine-portfolio" alt="Business card Yeppon (category e aziendale)"></a>
-            <a href="img/progetto-07.jpg" data-fancybox="gallery" data-caption="Scheda prodotto Enel su Amazon Yeppon"><img src="img/progetto-07-thumb.jpg" class="immagine-portfolio" alt="Scheda prodotto Enel su Amazon Yeppon"></a>
-            <a href="img/progetto-08.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su larepubblica.it"><img src="img/progetto-08-thumb.jpg" class="immagine-portfolio" alt="Skin Yeppon su larepubblica.it"></a>            
-            <a href="img/progetto-09.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su dday.it"><img src="img/progetto-09-thumb.jpg" class="immagine-portfolio" alt="Skin Yeppon su dday.it"></a>
-            <a href="img/progetto-10.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su La Gazzetta Dello Sport"><img src="img/progetto-10-thumb.jpg" class="immagine-portfolio" alt="Skin Yeppon su La Gazzetta Dello Sport"></a>
-            <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" class="immagine-portfolio" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
+            <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Manifesto pubblicitario Outlet"></a>
+            <a href="img/progetto-02.jpg" data-fancybox="gallery" data-caption="Gift Card Esselunga Yeppon"><img src="img/progetto-02-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Gift Card Esselunga Yeppon"></a>
+            <a href="img/progetto-03.jpg" data-fancybox="gallery" data-caption="Manifesto Fiera Bricoday"><img src="img/progetto-03-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Manifesto Fiera Bricoday"></a>
+            <a href="img/progetto-04.jpg" data-fancybox="gallery" data-caption="Flyer A5 Bricoday"><img src="img/progetto-04-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Flyer A5 Bricoday"></a>
+            <a href="img/progetto-05.jpg" data-fancybox="gallery" data-caption="Affissione Distributore Samplia Yeppon"><img src="img/progetto-05-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Affissione Distributore Samplia Yeppon"></a>
+            <a href="img/progetto-06.jpg" data-fancybox="gallery" data-caption="Business card Yeppon (category e aziendale)"><img src="img/progetto-06-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Business card Yeppon (category e aziendale)"></a>
+            <a href="img/progetto-07.jpg" data-fancybox="gallery" data-caption="Scheda prodotto Enel su Amazon Yeppon"><img src="img/progetto-07-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Scheda prodotto Enel su Amazon Yeppon"></a>
+            <a href="img/progetto-08.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su larepubblica.it"><img src="img/progetto-08-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Skin Yeppon su larepubblica.it"></a>            
+            <a href="img/progetto-09.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su dday.it"><img src="img/progetto-09-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Skin Yeppon su dday.it"></a>
+            <a href="img/progetto-10.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su La Gazzetta Dello Sport"><img src="img/progetto-10-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Skin Yeppon su La Gazzetta Dello Sport"></a>
+            <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
         </div>
     </div>
 
 </section>
 
-	<section id="contact-me">
+	<section id="contact-me"data-aos="fade-up">
 
 		<div class="contengo-contact-me">
 			<div class="contenuto-contact-me">
@@ -248,6 +265,29 @@ body {background-color: #171716; margin: 0px;}
         loop: true,
         captions: true,
     });
+</script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.querySelector('.menuuu-law');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  offset: 120,       // distanza dal fondo dello schermo prima che si attivi
+  delay: 100,        // ritardo in millisecondi
+  duration: 800,     // durata animazione
+  easing: 'ease-in-out',
+  once: false,       // animazione ogni volta che entra in viewport
+  mirror: true       // animazione anche durante scroll all’insù
+});
+
 </script>
 
 </body>

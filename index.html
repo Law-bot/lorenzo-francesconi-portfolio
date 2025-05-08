@@ -43,12 +43,13 @@ body {background-color: #171716; margin: 0px;}
 /*-------------------ABOUT-------------------*/
 
   #about{background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
-  	.contengo-about{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; width: 100%;}
+  	.contengo-about{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; width: 100%; margin-top: 100px;}
   		.contenuto-about{text-align: center; width: 50%;}
   		.titolo-about{font-size: 40px; color: #2ce7c7; margin: 0; text-shadow: -2px 2px 0px #fa1b59;}
   			.font-web{font-family: 'Courier'; font-weight: 100; color: #fa1b59; text-shadow: none;}
   			.font-designer{}
   		.testo-about{color: white; margin-top: 30px;}
+  		.testo-diverso{color: #2ce7c7; font-weight: 600; font-style: italic;}
   		.cv{margin-top: 30px; width: 100%;}
 	  	.download-cv {padding: 15px 30px; border: solid 2px #2ce7c7; width: 100px; border-radius: 10px; text-decoration: none; color: #2ce7c7; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; font-weight: 600; transition: all 0.5s ease-in-out;}
 	  	.download-cv:hover{color: #171716; border-radius: 10px; background-color: #2ce7c7; transition-duration: 0.5s; transition-timing-function: ease-in-out;}
@@ -72,7 +73,7 @@ body {background-color: #171716; margin: 0px;}
 /*-------------------FINE PORTOFLIO-------------------*/
 /*-------------------CONTACT ME-------------------*/
 
-	#contact-me{ background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
+	#contact-me{ text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
 		.contengo-contact-me{display: flex; flex-wrap: wrap; justify-content: center; text-align: center;}
 			.contenuto-contact-me{}
 				.titolo-contact-me{font-size: 25px; color: #edf2f2; width: 100%; margin: 0;}
@@ -98,7 +99,7 @@ body {background-color: #171716; margin: 0px;}
 		.send-mail-contact-me{font-size: 60px;}
 		.testo-more {width: 80%;}
 		.more-contenuto{width: 100%; margin-top: 50px;}
-		#intro{margin-bottom: 40px;}
+		#intro{margin-bottom: 10px;}
 	}
 
 	@media only screen and (max-width: 425px) {
@@ -107,7 +108,7 @@ body {background-color: #171716; margin: 0px;}
 		.testo-more {} 
 	  .more-contenuto{margin-bottom: 20px;}
 	  .dropdown-law{padding: 7px; margin: 5px;}
-		.hamburger { display: flex; position: fixed; top: 10px; right: 20px; }
+		.hamburger { display: flex; position: fixed; top: 10px; right: 20px; background-color: #171716;}
 		.menuuu-law { display: none; flex-direction: column; align-items: center; position: fixed; right: 0; width: 100%; background-color: rgba(23, 23, 22, 0.95); padding: 20px 0;
 		.dropdown-law { width: 100%; text-align: center; padding: 10px 0; }	  
 	}
@@ -189,7 +190,7 @@ body {background-color: #171716; margin: 0px;}
   	<div class="contengo-about">
 	  	<div class="contenuto-about"data-aos="fade-down">
 				<h2 class="titolo-about" >Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
-	    	<p class="testo-about">Sono una persona che ama mettersi in gioco, ecco perchè voglio sempre il 110% della perfezione nei miei elaborati grafici. Ciò che mi rende unico, è il mio lato umano. Nei mesi trascorsi a Londra ho intrapreso uno stile di vita indipendente, superando tante difficoltà. Grazie alla mia formazione e alle mie competenze ho acquisito ottime capacitá nei lavori individuali e in team, organizzando e rispettando i tempi di consegna.  Negli anni ho sviluppato uno mio stile personale; essenziale, pulito e di facile comprensione.</p>  		
+	    	<p class="testo-about">Cerco di rendere le insegne kebab un po' più carine.<br><br>Mi abbuffo quotidianamente di <span class="testo-diverso"> HTML, CSS, programmi Adobe e la pazienza dei colleghi.</span> Creo grafiche, DEM, banner, landing page e contenuti social con l'obiettivo di non annoiare mai nessuno (sopratutto me stesso).<br>Da anni lavoro nel mondo degli e-commerce: attualmente da Yeppon.it, dove mi destreggio tra <span class="testo-diverso"> newsletter, grafiche web, redesign, foto prodotto</span> e quel magico mondo chiamato <span class="testo-diverso">“PED”</span> (sia social che commerciale).<br><br>Ho collaborato anche con agenzie, e realizzato qualche progetto personale <i>*e no, non ho mai usato Comic Sans.*</i>Sono fan del design essenziale ma non banale, della chiarezza visiva e della soddisfazione del cliente (che non è sempre facile, ma ho la pazienza dalla mia parte). Ah quasi dimenticavo,<span class="testo-diverso"> ho anche vissuto a Londra:</span>  trovo che uscire dalla zona di comfort sia il miglior modo per mostrare chi sei veramente.<br><br>Se vuoi lavorare con uno che ci mette il <span class="testo-diverso"> cuore, la testa e qualche battuta</span> per rallegrare l'ambiente, prendiamoci un ☕ insieme!</p>  		
 	  	</div>
 	  	<div class="cv"data-aos="fade-down">
 	  		<a href="download/CV.pdf" target="_blank" class="download-cv no-hover-effect">Scarica CV</a>
@@ -230,8 +231,9 @@ body {background-color: #171716; margin: 0px;}
             <a href="img/progetto-09.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su dday.it"><img src="img/progetto-09-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Skin Yeppon su dday.it"></a>
             <a href="img/progetto-10.jpg" data-fancybox="gallery" data-caption="Skin Yeppon su La Gazzetta Dello Sport"><img src="img/progetto-10-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Skin Yeppon su La Gazzetta Dello Sport"></a>
             <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
+            <a href="img/bibes-yeppon.jpg" data-fancybox="gallery" data-caption="Landing Page su Yeppon per Bibes (www.yeppon.it/promo/bibes)"><img src="img/bibes-yeppon-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Landing Page su Yeppon per Bibes (www.yeppon.it/promo/bibes)"></a>
         </div>
-    </div>
+    </div> 
 
 </section>
 

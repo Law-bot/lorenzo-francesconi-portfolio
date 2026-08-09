@@ -1,159 +1,480 @@
 <!doctype html>
-<style type="text/css">
-	@charset "UTF-8";
-
-html,body{margin: 0; padding: 0; font-family: 'Plus Jakarta Sans'; scroll-behavior: smooth;}
-
-*, *::before, *::after {box-sizing: border-box;}
-
-a {text-decoration: none; transition: text-shadow 0.3s ease, transform 0.2s ease;}
-.ombra:hover {text-shadow: -2px 2px 0px #fa1b59; transition-duration: 0.3s; transition-timing-function: ease-in; cursor: url('img/cursore.gif'), auto; }
-
-
-body {background-color: #171716; margin: 0px;}
-
-	#law {}
-				
-/*-------------------INTRO-------------------*/
-		
-		#intro {height: 100vh; /*background-color: blueviolet;*/ background-image: url('img/img-lorenzo-01.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; display: flex; flex-wrap: wrap; width: 100%; position: relative;}
-		#intro::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(23, 23, 22, 0.5); /* sfondo scuro semi-trasparente */ z-index: 1;}
-			.img-intro {height: auto;}
-
-		  .menuuu-law{display: flex; flex-wrap: wrap; justify-content: center; text-align: left; overflow: hidden; position: fixed; width: 100%; background-color: rgba(23, 23, 22, 0.95); z-index: 10;}
-		    .dropdown-law-content a:hover{color: #1cd860;}
-		    .testoaccordion-law {margin-top: 0;}
-		    .dropdown-law {position: relative; display: inline-block; padding: 10px; margin: 10px;}
-		    .dropbtn-law {color: #edf2f2 !important; font-size: 14px; font-family: 'Plus Jakarta Sans'; border: none; /*text-transform: uppercase;*/ cursor: pointer; margin: 0; font-weight: 600; line-height: normal;}
-		    .dropbtn-law:hover{color: #2ce7c7 !important;}
-		    /*.dropdown-law-content {display: none; position: absolute; min-width: 160px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2); z-index: 20;}
-		    .sottomenu-dropdown-law-content {color: #2d2d2d; padding: 10px 14px; text-decoration: none; display: block; font-size: 14px; font-weight: 700; line-height: normal; text-transform: uppercase;}
-		    .sottomenu-dropdown-law-content:hover {}*/
-		    .dropdown-law:hover .dropdown-law-content {display: block;}
-		    /*.dropdown-law:hover .dropbtn-law {background-color: #1ed760;}*/
-
-			.hamburger { display: none; flex-direction: column; cursor: pointer; padding: 10px; z-index: 11; }
-			.hamburger span { height: 3px; width: 25px; background: #2ce7c7; margin: 4px 0; border-radius: 2px; transition: all 0.3s ease; }
-			.menuuu-law.active { display: flex !important; flex-direction: column; background-color: rgba(23, 23, 22, 0.95); }
-
-		  .contengo-titolo-intro{display: flex; justify-content: center; align-items: center; width: 100%; z-index: 2;}
-		  	.titolo-intro{font-family: 'Plus Jakarta Sans'; font-size: 150px; color: #2ce7c7; text-shadow: -8px 8px 0px #fa1b59; text-align: center; margin: 0;line-height: 150px;}
-   
-/*-------------------FINE INTRO-------------------*/
-/*-------------------ABOUT-------------------*/
-
-  #about{background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
-  	.contengo-about{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; width: 100%; margin-top: 100px;}
-  		.contenuto-about{text-align: center; width: 50%;}
-  		.titolo-about{font-size: 40px; color: #2ce7c7; margin: 0; text-shadow: -2px 2px 0px #fa1b59;}
-  			.font-web{font-family: 'Courier'; font-weight: 100; color: #fa1b59; text-shadow: none;}
-  			.font-designer{}
-  		.testo-about{color: white; margin-top: 30px;}
-  		.testo-diverso{color: #2ce7c7; font-weight: 600; font-style: italic;}
-  		.cv{margin-top: 30px; width: 100%;}
-	  	.download-cv {padding: 15px 30px; border: solid 2px #2ce7c7; width: 100px; border-radius: 10px; text-decoration: none; color: #2ce7c7; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; font-weight: 600; transition: all 0.5s ease-in-out;}
-	  	.download-cv:hover{color: #171716; border-radius: 10px; background-color: #2ce7c7; transition-duration: 0.5s; transition-timing-function: ease-in-out;}
-
-	  .more{display: flex; flex-wrap: wrap; justify-content: center; margin-top: 150px; text-align: center; width: 100%;}
-	  	.more-contenuto{width: 32%;}
-	  	.more-contenuto img {max-width: 100px;}
-  		.titolo-more{font-size: 30px; color: #edf2f2; margin: 0; text-transform: capitalize; margin-top: 10px; width: 100%;}
-  		.testo-more{color: white; margin-top: 30px; width: 300px; margin: auto; margin-top: 20px;}
-
-/*-------------------FINE ABOUT-------------------*/
-/*-------------------PORTOFLIO-------------------*/
-
-	#portfolio {background-color: #171716; text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; /* Fa in modo che la sezione prenda tutta l'altezza della pagina */ width: 95%; margin: auto;}
-		.titolo-portfolio {font-size: 40px; color: #2ce7c7; margin-bottom: 50px; text-align: center; text-shadow: -2px 2px 0px #fa1b59; margin-top:100px;}
-			.immagine-portfolio {max-width: 100%; height: auto; transition: transform 0.3s ease;}
-			.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; justify-items: center; /* Imposta una larghezza massima per la griglia */ width: 100%;}
-				.portfolio-grid a { display: block; position: relative; overflow: hidden; }
-				.portfolio-grid a:hover img { transform: scale(1.05); }
-
-/*-------------------FINE PORTOFLIO-------------------*/
-/*-------------------CONTACT ME-------------------*/
-
-	#contact-me{ text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh; }
-		.contengo-contact-me{display: flex; flex-wrap: wrap; justify-content: center; text-align: center;}
-			.contenuto-contact-me{}
-				.titolo-contact-me{font-size: 25px; color: #edf2f2; width: 100%; margin: 0;}
-				.mail-contact-me{margin-top: 120px;}
-				.send-mail-contact-me {font-size: 120px; font-weight: 700; color: #2ce7c7; text-decoration: none; transition: text-shadow 0.3s ease, transform 0.2s ease;}
-				.send-mail-contact-me:hover {text-shadow: -5px 5px 0px #fa1b59; transition-duration: 0.3s; transition-timing-function: ease-in; cursor: url('img/cursore.gif'), auto; /* cursore durante hover */ }
-
-		.contengo-firma{display: flex; flex-wrap: wrap; justify-content: center; text-align: center; margin-top: 150px; padding-bottom: 20px;}
-			.contenuto-firma{}
-				.firma{color: #edf2f2; font-size: 12px;}
-
-/*-------------------FINE CONTACT ME-------------------*/
-
-	@media only screen and (max-width: 1060px) {
-		.testo-more {width: 80%;}
-		.testo-about{}		
-		.contenuto-about{width: 80%;}
-		.portfolio-grid {}
-	}
-
-	@media only screen and (max-width: 768px) {
-		.titolo-intro{font-size: 100px; line-height: 100px;}
-		.send-mail-contact-me{font-size: 60px;}
-		.testo-more {width: 80%;}
-		.more-contenuto{width: 100%; margin-top: 50px;}
-		#intro{margin-bottom: 10px;}
-	}
-
-	@media only screen and (max-width: 425px) {
-		.titolo-intro {font-size: 80px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
-	  .more-contenuto{width: 100%;}
-		.testo-more {} 
-	  .more-contenuto{margin-bottom: 20px;}
-	  .dropdown-law{padding: 7px; margin: 5px;}
-		.hamburger { display: flex; position: fixed; top: 10px; right: 20px; background-color: #171716;}
-		.menuuu-law { display: none; flex-direction: column; align-items: center; position: fixed; right: 0; width: 100%; background-color: rgba(23, 23, 22, 0.95); padding: 20px 0;
-		.dropdown-law { width: 100%; text-align: center; padding: 10px 0; }	  
-	}
-
-	@media only screen and (max-width: 375px) {
-		.titolo-intro {font-size: 70px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
-	}		
-
-	@media only screen and (max-width: 320px) {
-		.titolo-intro {font-size: 60px; text-shadow: -4px 4px 0px #fa1b59; line-height: 1;}
-	}
-
-
-</style>
-
-<!---------html--------->
-
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lorenzo Francesconi</title>
+<title>Lorenzo Francesconi — Portfolio</title>
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-<!--link href="css/style.css" rel="stylesheet" type="text/css"-->
+
 <!-- Fancybox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">
 <!-- AOS CSS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style type="text/css">
+@charset "UTF-8";
+
+:root {
+  --bg-color: #171716;
+  --accent-cyan: #2ce7c7;
+  --accent-magenta: #fa1b59;
+  --text-main: #edf2f2;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html, body {
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  /* Nasconde il cursore di default sui desktop per fare spazio al cursore custom */
+  cursor: default;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- CURSORE CUSTOM MODERNO --- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out, opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+/* Ingrandimento del cursore sugli elementi interattivi */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.interactive:hover ~ .custom-cursor {
+  transform: translate(-50%, -50%) scale(2.5);
+}
+
+/* Transizioni Base sui Link */
+a {
+  text-decoration: none; 
+  color: inherit;
+  transition: all 0.4s var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.ombra {
+  transition: text-shadow 0.4s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), color 0.3s ease;
+}
+
+.ombra:hover {
+  text-shadow: -4px 4px 0px var(--accent-magenta); 
+}
+
+/*-------------------INTRO-------------------*/
+#intro {
+  height: 100vh; 
+  background-image: url('img/img-lorenzo-01.jpg'); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  display: flex; 
+  flex-wrap: wrap; 
+  width: 100%; 
+  position: relative;
+}
+
+#intro::before { 
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(23, 23, 22, 0.55); 
+  z-index: 1;
+}
+
+.menuuu-law {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: center;
+  position: fixed; 
+  width: 100%; 
+  background-color: rgba(23, 23, 22, 0.85); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdown-law {
+  position: relative; 
+  display: inline-block; 
+  padding: 8px 16px; 
+}
+
+.dropbtn-law {
+  color: var(--text-main) !important; 
+  font-size: 14px; 
+  font-weight: 600; 
+  line-height: normal;
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out-expo), color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.dropbtn-law:hover {
+  color: var(--accent-cyan) !important;
+  transform: translateY(-2px);
+}
+
+.hamburger { 
+  display: none; 
+  flex-direction: column; 
+  cursor: pointer; 
+  padding: 10px; 
+  z-index: 11; 
+  border: none;
+  background: transparent;
+}
+
+.hamburger span { 
+  height: 3px; 
+  width: 25px; 
+  background: var(--accent-cyan); 
+  margin: 4px 0; 
+  border-radius: 2px; 
+  transition: all 0.3s var(--ease-out-expo); 
+}
+
+.menuuu-law.active { 
+  display: flex !important; 
+  flex-direction: column; 
+  background-color: rgba(23, 23, 22, 0.98); 
+}
+
+.contengo-titolo-intro {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  z-index: 2;
+}
+
+/* TIPOGRAFIA FLUIDA CON CLAMP() */
+.titolo-intro {
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  font-size: clamp(3.5rem, 10vw, 9.5rem); 
+  color: var(--accent-cyan); 
+  text-shadow: -6px 6px 0px var(--accent-magenta); 
+  text-align: center; 
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  transition: text-shadow 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+
+.titolo-intro:hover {
+  text-shadow: -10px 10px 0px var(--accent-magenta);
+  transform: translateY(-4px);
+}
+
+/*-------------------ABOUT-------------------*/
+#about {
+  background-color: var(--bg-color); 
+  text-align: center; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  padding: 80px 20px;
+}
+
+.contengo-about {
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  width: 100%; 
+  max-width: 1200px;
+}
+
+.contenuto-about {
+  text-align: center; 
+  max-width: 750px;
+  width: 100%;
+}
+
+.titolo-about {
+  font-size: clamp(2rem, 4vw, 2.8rem); 
+  color: var(--accent-cyan); 
+  margin: 0; 
+  text-shadow: -2px 2px 0px var(--accent-magenta);
+}
+
+.font-web {
+  font-family: 'Courier Prime', monospace; 
+  font-weight: 400; 
+  color: var(--accent-magenta); 
+  text-shadow: none;
+}
+
+.testo-about {
+  color: var(--text-main); 
+  margin-top: 30px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.testo-diverso {
+  color: var(--accent-cyan); 
+  font-weight: 600; 
+  font-style: italic;
+}
+
+.cv {
+  margin-top: 40px; 
+  width: 100%;
+}
+
+.download-cv {
+  display: inline-block;
+  padding: 15px 32px; 
+  border: solid 2px var(--accent-cyan); 
+  border-radius: 10px; 
+  text-decoration: none; 
+  color: var(--accent-cyan); 
+  text-transform: uppercase; 
+  font-size: 11px; 
+  letter-spacing: 0.12em; 
+  font-weight: 700; 
+  transition: all 0.4s var(--ease-out-expo);
+  will-change: transform, background-color, box-shadow;
+}
+
+.download-cv:hover {
+  color: var(--bg-color); 
+  background-color: var(--accent-cyan); 
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(44, 231, 199, 0.25);
+}
+
+/* LAYOUT GRID PER LA SEZIONE MORE */
+.more {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 120px; 
+  width: 100%;
+  max-width: 1100px;
+}
+
+.more-contenuto {
+  padding: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
+}
+
+.more-contenuto:hover {
+  transform: translateY(-6px);
+  border-color: rgba(44, 231, 199, 0.3);
+}
+
+.more-contenuto img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.more-contenuto:hover img {
+  transform: scale(1.1);
+}
+
+.titolo-more {
+  font-size: 1.5rem; 
+  color: var(--text-main); 
+  margin: 15px 0 0 0; 
+  text-transform: capitalize; 
+}
+
+.testo-more {
+  color: rgba(255, 255, 255, 0.8); 
+  margin: 15px auto 0 auto;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/*-------------------PORTFOLIO-------------------*/
+#portfolio {
+  background-color: var(--bg-color); 
+  text-align: center; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.titolo-portfolio {
+  font-size: clamp(2rem, 4vw, 2.8rem); 
+  color: var(--accent-cyan); 
+  margin-bottom: 50px; 
+  text-shadow: -2px 2px 0px var(--accent-magenta); 
+}
+
+.portfolio-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 25px; 
+  width: 100%;
+}
+
+.portfolio-grid a { 
+  display: block; 
+  position: relative; 
+  overflow: hidden; 
+  border-radius: 10px;
+  background-color: #222;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.immagine-portfolio {
+  width: 100%; 
+  height: auto; 
+  display: block;
+  transition: transform 0.5s var(--ease-out-expo), opacity 0.4s ease;
+  will-change: transform;
+}
+
+.portfolio-grid a:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-grid a:hover .immagine-portfolio { 
+  transform: scale(1.06); 
+}
+
+/*-------------------CONTACT ME-------------------*/
+#contact-me { 
+  text-align: center; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  padding: 80px 20px 20px 20px;
+}
+
+.titolo-contact-me {
+  font-size: clamp(1.5rem, 3vw, 2rem); 
+  color: var(--text-main); 
+  margin: 0;
+  line-height: 1.3;
+}
+
+.mail-contact-me {
+  margin-top: 60px;
+}
+
+.send-mail-contact-me {
+  display: inline-block;
+  font-size: clamp(3rem, 8vw, 7.5rem); 
+  font-weight: 800; 
+  color: var(--accent-cyan); 
+  text-decoration: none; 
+  line-height: 1;
+  transition: text-shadow 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo), color 0.3s ease;
+  will-change: transform, text-shadow;
+}
+
+.send-mail-contact-me:hover {
+  text-shadow: -8px 8px 0px var(--accent-magenta); 
+  transform: translateY(-4px);
+}
+
+.contengo-firma {
+  margin-top: auto; 
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.firma {
+  color: rgba(237, 242, 242, 0.6); 
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+/*-------------------RESPONSIVE-------------------*/
+@media only screen and (max-width: 768px) {
+  .custom-cursor { display: none; } /* Su mobile usiamo il touch nativo */
+  html, body { cursor: auto; }
+  
+  .hamburger { 
+    display: flex; 
+    position: fixed; 
+    top: 15px; 
+    right: 20px; 
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .menuuu-law { 
+    display: none; 
+    flex-direction: column; 
+    position: fixed; 
+    top: 0;
+    right: 0; 
+    height: 100vh;
+    width: 100%; 
+    justify-content: center;
+    background-color: rgba(23, 23, 22, 0.98); 
+  }
+
+  .dropdown-law {
+    padding: 15px 0;
+  }
+
+  .dropbtn-law {
+    font-size: 20px;
+  }
+}
+</style>
 </head>
 
 <body>
+  <!-- Cursore Custom -->
+  <div class="custom-cursor" id="cursor"></div>
+
 	<section class="law">
 
 		<section id="intro">
 
-			<section class="hamburger" id="hamburger">
+			<button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione">
 			  <span></span>
 			  <span></span>
 			  <span></span>
-			</section>
+			</button>
 
-			<div class="menuuu-law">
+			<nav class="menuuu-law">
 			 	<div class="dropdown-law">
 			    <a href="#intro" class="dropbtn-law ombra">home</a>
 			  </div>
@@ -163,58 +484,50 @@ body {background-color: #171716; margin: 0px;}
 			  <div class="dropdown-law">
 			    <a href="#portfolio" class="dropbtn-law ombra">portfolio</a>
 			  </div>
-			  <!--div class="dropdown-law">
-			    <a href="mailto:lorenzofrancesconi435@gmail.com" class="dropbtn-law ombra">contact me</a>
-			  </div-->
 			  <div class="dropdown-law">
 			    <a href="#contact-me" class="dropbtn-law ombra">contact me</a>
 			  </div>			  
-			</div>
+			</nav>
 
 			<div class="contengo-titolo-intro">
 				<div>
 					<h1 class="titolo-intro" data-aos="fade-down">Hello,<br> I'm Lorenzo.</h1>
 				</div>
-				<div class="img-sfondo">
-					<!--img src="img/homer.jpg" class="img-intro"-->
-				</div>
 			</div>
 		
 		</section>
 
-  <section id="about" >
-
+  <section id="about">
   	<div class="contengo-about">
-	  	<div class="contenuto-about"data-aos="fade-down">
-				<h2 class="titolo-about" >Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
-	    	<p class="testo-about">Cerco di rendere le insegne kebab un po' più carine.<br><br>Mi abbuffo quotidianamente di <span class="testo-diverso"> HTML, CSS, programmi Adobe e la pazienza dei colleghi.</span> Creo grafiche, DEM, banner, landing page e contenuti social con l'obiettivo di non annoiare mai nessuno (sopratutto me stesso).<br>Da anni lavoro nel mondo degli e-commerce: attualmente da Yeppon.it, dove mi destreggio tra <span class="testo-diverso"> newsletter, grafiche web, redesign, foto prodotto</span> e quel magico mondo chiamato <span class="testo-diverso">“PED”</span> (sia social che commerciale).<br><br>Ho collaborato anche con agenzie, e realizzato qualche progetto personale <i>*e no, non ho mai usato Comic Sans.*</i>Sono fan del design essenziale ma non banale, della chiarezza visiva e della soddisfazione del cliente (che non è sempre facile, ma ho la pazienza dalla mia parte). Ah quasi dimenticavo,<span class="testo-diverso"> ho anche vissuto a Londra:</span>  trovo che uscire dalla zona di comfort sia il miglior modo per mostrare chi sei veramente.<br><br>Se vuoi lavorare con uno che ci mette il <span class="testo-diverso"> cuore, la testa e qualche battuta</span> per rallegrare l'ambiente, prendiamoci un ☕ insieme!</p>  		
+	  	<div class="contenuto-about" data-aos="fade-down">
+				<h2 class="titolo-about">Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
+	    	<p class="testo-about">Cerco di rendere le insegne kebab un po' più carine.<br><br>Mi abbuffo quotidianamente di <span class="testo-diverso"> HTML, CSS, programmi Adobe e la pazienza dei colleghi.</span> Creo grafiche, DEM, banner, landing page e contenuti social con l'obiettivo di non annoiare mai nessuno (sopratutto me stesso).<br>Da anni lavoro nel mondo degli e-commerce: attualmente da Yeppon.it, dove mi destreggio tra <span class="testo-diverso"> newsletter, grafiche web, redesign, foto prodotto</span> e quel magico mondo chiamato <span class="testo-diverso">“PED”</span> (sia social che commerciale).<br><br>Ho collaborato anche con agenzie, e realizzato qualche progetto personale <i>*e no, non ho mai usato Comic Sans.*</i> Sono fan del design essenziale ma non banale, della chiarezza visiva e della soddisfazione del cliente (che non è sempre facile, ma ho la pazienza dalla mia parte). Ah quasi dimenticavo,<span class="testo-diverso"> ho anche vissuto a Londra:</span> trovo che uscire dalla zona di comfort sia il miglior modo per mostrare chi sei veramente.<br><br>Se vuoi lavorare con uno che ci mette il <span class="testo-diverso"> cuore, la testa e qualche battuta</span> per rallegrare l'ambiente, prendiamoci un ☕ insieme!</p>  		
 	  	</div>
-	  	<div class="cv"data-aos="fade-down">
-	  		<a href="download/CV.pdf" target="_blank" class="download-cv no-hover-effect">Scarica CV</a>
+	  	<div class="cv" data-aos="fade-down">
+	  		<a href="download/CV.pdf" target="_blank" class="download-cv">Scarica CV</a>
 	  	</div>		  	
 	  	<div class="more">
-	  		<div class="more-contenuto"data-aos="fade-down">
-	  			<img src="img/icone-branding.png">	  			
-	  			<h2 class="titolo-more">branding</h2>
+	  		<div class="more-contenuto" data-aos="fade-down">
+	  			<img src="img/icone-branding.png" alt="Branding">	  			
+	  			<h3 class="titolo-more">branding</h3>
 	  			<p class="testo-more">L’idea giusta, con la giusta dose di creatività, il tutto condito dalla conoscenza approfondita dei programmi Adobe Photoshop, Illustrator, Indesign.</p>
 	  		</div>
-	  		<div class="more-contenuto"data-aos="fade-down">
-	  			<img src="img/icone-developer.png">
-	  			<h2 class="titolo-more">developer</h2>
+	  		<div class="more-contenuto" data-aos="fade-down">
+	  			<img src="img/icone-developer.png" alt="Developer">
+	  			<h3 class="titolo-more">developer</h3>
 	  			<p class="testo-more">Prima la progettazione, poi lo sviluppo.<br>Mi abbuffo di codice HTML5, +CSS3 e jQuery, utilizzando software specifici come Sketch, Atom e Adobe XD.</p>
 	  		</div>
-	  		<div class="more-contenuto"data-aos="fade-down">
-	  			<img src="img/icone-creativity.png">
-	  			<h2 class="titolo-more">creativity</h2>
+	  		<div class="more-contenuto" data-aos="fade-down">
+	  			<img src="img/icone-creativity.png" alt="Creativity">
+	  			<h3 class="titolo-more">creativity</h3>
 	  			<p class="testo-more">Ogni lavoro è diverso, ciò che li accomuna è la creatività e lo studio per arrivare a un determinato risultato.<br>La differenza è che, studiosi si diventa, creativi si nasce!</p>
 	  		</div>	  		  	
 	  	</div>
   	</div>
   </section>
 
-<section id="portfolio">
-
-    <div class="contengo-portfolio"data-aos="fade-down">
+  <section id="portfolio">
+    <div class="contengo-portfolio" data-aos="fade-down">
         <h2 class="titolo-portfolio">Portfolio</h2>
         <div class="portfolio-grid">
             <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Manifesto pubblicitario Outlet"></a>
@@ -231,11 +544,9 @@ body {background-color: #171716; margin: 0px;}
             <a href="img/bibes-yeppon.jpg" data-fancybox="gallery" data-caption="Landing Page su Yeppon per Bibes (www.yeppon.it/promo/bibes)"><img src="img/bibes-yeppon-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Landing Page su Yeppon per Bibes (www.yeppon.it/promo/bibes)"></a>
         </div>
     </div> 
+  </section>
 
-</section>
-
-	<section id="contact-me"data-aos="fade-down">
-
+	<section id="contact-me" data-aos="fade-down">
 		<div class="contengo-contact-me">
 			<div class="contenuto-contact-me">
 				<h3 class="titolo-contact-me">Let's make<br>something great</h3>
@@ -246,31 +557,34 @@ body {background-color: #171716; margin: 0px;}
 		</div>
 		<div class="contengo-firma">
 			<div class="contenuto-firma">
-				<p class="firma">Lorenzo Francesconi 2025</p>
+				<p class="firma">Lorenzo Francesconi 2026</p>
 			</div>
 		</div>		
-
 	</section>
 
 	</section>
 
-	<!-- Fancybox JS -->
+<!-- Fancybox JS -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
-
-<!-- Fancybox Initialization -->
 <script>
-    Fancybox.bind('[data-fancybox="gallery"]', {
-        loop: true,
-        captions: true,
-    });
-</script>
+  Fancybox.bind('[data-fancybox="gallery"]', {
+      loop: true,
+      captions: true,
+  });
 
-<script>
+  // Toggle Hamburger Menu Mobile
   const hamburger = document.getElementById('hamburger');
   const menu = document.querySelector('.menuuu-law');
 
   hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
+  });
+
+  // Cursore Custom dinamico
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
   });
 </script>
 
@@ -278,14 +592,13 @@ body {background-color: #171716; margin: 0px;}
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init({
-  offset: 120,       // distanza dal fondo dello schermo prima che si attivi
-  delay: 100,        // ritardo in millisecondi
-  duration: 800,     // durata animazione
-  easing: 'ease-in-out',
-  once: false,       // animazione ogni volta che entra in viewport
-  mirror: true       // animazione anche durante scroll all’insù
+  offset: 100,
+  delay: 50,
+  duration: 800,
+  easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+  once: false,
+  mirror: true
 });
-
 </script>
 
 </body>

@@ -3,17 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lorenzo Francesconi — Portfolio</title>
+<title>Lorenzo Francesconi | Graphic &amp; Web Designer — Portfolio</title>
+<meta name="description" content="Portfolio di Lorenzo Francesconi, Graphic & Web Designer. Branding, grafica web, DEM, landing page e contenuti social — attualmente in We [are] Digital.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#171716">
+<link rel="canonical" href="https://law-bot.github.io/lorenzo-francesconi-portfolio/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lorenzo Francesconi | Graphic & Web Designer — Portfolio">
+<meta property="og:description" content="Branding, grafica web, DEM, landing page e contenuti social — attualmente in We [are] Digital. Dai un'occhiata ai progetti.">
+<meta property="og:image" content="https://law-bot.github.io/lorenzo-francesconi-portfolio/img/img-lorenzo-01.jpg">
+<meta property="og:url" content="https://law-bot.github.io/lorenzo-francesconi-portfolio/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lorenzo Francesconi | Graphic & Web Designer">
+<meta name="twitter:description" content="Branding, grafica web, DEM, landing page e contenuti social — attualmente in We [are] Digital.">
+<meta name="twitter:image" content="https://law-bot.github.io/lorenzo-francesconi-portfolio/img/img-lorenzo-01.jpg">
+
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-<!-- Fancybox CSS  -->
+<!-- Fancybox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">
 <!-- AOS CSS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lorenzo Francesconi",
+  "jobTitle": "Graphic & Web Designer",
+  "email": "mailto:lorenzofrancesconi435@gmail.com",
+  "url": "https://law-bot.github.io/lorenzo-francesconi-portfolio/",
+  "image": "https://law-bot.github.io/lorenzo-francesconi-portfolio/img/img-lorenzo-01.jpg",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "We [are] Digital"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/lorenzo-francesconi/",
+    "https://www.behance.net/lorenzofrancesconi"
+  ],
+  "knowsAbout": ["Graphic Design", "Web Design", "Branding", "HTML", "CSS", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]
+}
+</script>
 
 <style type="text/css">
 @charset "UTF-8";
@@ -27,18 +64,31 @@
 }
 
 html, body {
-  margin: 0; 
-  padding: 0; 
-  font-family: 'Plus Jakarta Sans', sans-serif; 
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
   scroll-behavior: smooth;
   background-color: var(--bg-color);
   color: var(--text-main);
   /* Nasconde il cursore di default sui desktop per fare spazio al cursore custom */
-  cursor: default;
+  cursor: none;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .custom-cursor { display: none; }
+  html, body { cursor: auto; }
 }
 
 /* --- CURSORE CUSTOM MODERNO --- */
@@ -77,7 +127,28 @@ a {
 }
 
 .ombra:hover {
-  text-shadow: -4px 4px 0px var(--accent-magenta); 
+  text-shadow: -4px 4px 0px var(--accent-magenta);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 1000;
+  background: var(--accent-cyan);
+  color: var(--bg-color);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: top 0.3s var(--ease-out-expo);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.dropbtn-law.active-link {
+  color: var(--accent-cyan) !important;
 }
 
 /*-------------------INTRO-------------------*/
@@ -173,7 +244,7 @@ a {
 
 /* TIPOGRAFIA FLUIDA CON CLAMP() */
 .titolo-intro {
-  font-family: 'Plus Jakarta Sans', sans-serif; 
+  font-family: 'Space Grotesk', sans-serif; 
   font-size: clamp(3.5rem, 10vw, 9.5rem); 
   color: var(--accent-cyan); 
   text-shadow: -6px 6px 0px var(--accent-magenta); 
@@ -189,53 +260,103 @@ a {
   transform: translateY(-4px);
 }
 
+.sottotitolo-intro {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  color: var(--text-main);
+  text-align: center;
+  margin: 18px 0 0;
+  letter-spacing: 0.02em;
+}
+
+.sottotitolo-intro .font-web {
+  text-shadow: none;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-main);
+}
+
+.scroll-cue span {
+  width: 1px;
+  height: 34px;
+  background: rgba(237, 242, 242, 0.4);
+}
+
+.scroll-cue svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  animation: scroll-cue-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue svg { animation: none; }
+}
+
 /*-------------------ABOUT-------------------*/
 #about {
-  background-color: var(--bg-color); 
-  text-align: center; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-  min-height: 100vh; 
-  padding: 80px 20px;
+  background-color: var(--bg-color);
+  padding: 50px 20px;
 }
 
 .contengo-about {
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  text-align: center; 
-  width: 100%; 
+  align-items: center;
+  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contenuto-about {
-  text-align: center; 
-  max-width: 750px;
+  text-align: left;
+  max-width: 700px;
   width: 100%;
 }
 
 .titolo-about {
-  font-size: clamp(2rem, 4vw, 2.8rem); 
-  color: var(--accent-cyan); 
-  margin: 0; 
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--accent-cyan);
+  margin: 0;
+  text-align: left;
   text-shadow: -2px 2px 0px var(--accent-magenta);
 }
 
 .font-web {
-  font-family: 'Courier Prime', monospace; 
-  font-weight: 400; 
-  color: var(--accent-magenta); 
+  font-family: 'Courier Prime', monospace;
+  font-weight: 400;
+  color: var(--accent-magenta);
   text-shadow: none;
 }
 
 .testo-about {
-  color: var(--text-main); 
-  margin-top: 30px;
+  color: var(--text-main);
+  margin-top: 26px;
   line-height: 1.7;
   font-size: 1.05rem;
+}
+
+.testo-about p {
+  margin: 0 0 18px;
+}
+
+.testo-about p:last-child {
+  margin-bottom: 0;
 }
 
 .testo-diverso {
@@ -245,92 +366,179 @@ a {
 }
 
 .cv {
-  margin-top: 40px; 
+  margin-top: 28px;
   width: 100%;
+  max-width: 700px;
+  text-align: left;
 }
 
 .download-cv {
   display: inline-block;
-  padding: 15px 32px; 
-  border: solid 2px var(--accent-cyan); 
-  border-radius: 10px; 
-  text-decoration: none; 
-  color: var(--accent-cyan); 
-  text-transform: uppercase; 
-  font-size: 11px; 
-  letter-spacing: 0.12em; 
-  font-weight: 700; 
+  padding: 15px 32px;
+  border: solid 2px var(--accent-cyan);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
   transition: all 0.4s var(--ease-out-expo);
   will-change: transform, background-color, box-shadow;
 }
 
 .download-cv:hover {
-  color: var(--bg-color); 
-  background-color: var(--accent-cyan); 
+  color: var(--bg-color);
+  background-color: var(--accent-cyan);
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(44, 231, 199, 0.25);
 }
 
-/* LAYOUT GRID PER LA SEZIONE MORE */
-.more {
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 120px; 
+.tools-marquee {
   width: 100%;
-  max-width: 1100px;
+  max-width: 700px;
+  overflow: hidden;
+  margin: 28px 0 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.tools-row {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  animation: tools-marquee-scroll 26s linear infinite;
+}
+
+.tools-marquee:hover .tools-row {
+  animation-play-state: paused;
+}
+
+@keyframes tools-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.tools-row li {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-family: 'Courier Prime', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+  border: 1px solid rgba(237, 242, 242, 0.2);
+  border-radius: 100px;
+  padding: 7px 16px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.tools-row li:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-row { animation: none; flex-wrap: wrap; }
+  .tools-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+}
+
+/* LAYOUT "COSA FACCIO" INTEGRATO NELL'ABOUT */
+.eyebrow-more {
+  font-family: 'Courier Prime', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  text-align: left;
+  width: 100%;
+  max-width: 700px;
+  margin: 56px 0 20px;
+}
+
+.more {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: 700px;
+  border-top: 1px solid rgba(237, 242, 242, 0.12);
 }
 
 .more-contenuto {
-  padding: 24px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
+  padding: 28px 26px;
+  border-right: 1px solid rgba(237, 242, 242, 0.12);
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.more-contenuto:first-child {
+  padding-left: 0;
+}
+
+.more-contenuto:last-child {
+  border-right: 0;
+  padding-right: 0;
 }
 
 .more-contenuto:hover {
-  transform: translateY(-6px);
-  border-color: rgba(44, 231, 199, 0.3);
+  transform: translateY(-4px);
+}
+
+.more-titolo-riga {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .more-contenuto img {
-  max-width: 80px;
-  height: auto;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
   transition: transform 0.4s var(--ease-out-expo);
 }
 
 .more-contenuto:hover img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .titolo-more {
-  font-size: 1.5rem; 
-  color: var(--text-main); 
-  margin: 15px 0 0 0; 
-  text-transform: capitalize; 
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin: 0;
+  text-transform: capitalize;
 }
 
 .testo-more {
-  color: rgba(255, 255, 255, 0.8); 
-  margin: 15px auto 0 auto;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 10px 0 0;
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .more { grid-template-columns: 1fr; border-top: 0; }
+  .more-contenuto { border-right: 0; border-top: 1px solid rgba(237, 242, 242, 0.12); padding: 28px 0; }
+  .more-contenuto:first-child { border-top: 0; padding-top: 0; }
 }
 
 /*-------------------PORTFOLIO-------------------*/
 #portfolio {
-  background-color: var(--bg-color); 
-  text-align: center; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-  min-height: 100vh; 
+  background-color: var(--bg-color);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 50px 20px;
+}
+
+#portfolio .contengo-portfolio {
+  width: 100%;
+  min-width: 0;
 }
 
 .titolo-portfolio {
@@ -340,26 +548,43 @@ a {
   text-shadow: -2px 2px 0px var(--accent-magenta); 
 }
 
-.portfolio-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-  gap: 25px; 
+.portfolio-slider {
+  position: relative;
   width: 100%;
 }
 
-.portfolio-grid a { 
-  display: block; 
-  position: relative; 
-  overflow: hidden; 
+.portfolio-grid {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.portfolio-grid::-webkit-scrollbar { display: none; }
+
+.portfolio-grid a {
+  flex: 0 0 auto;
+  width: min(340px, 78vw);
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+  display: block;
+  position: relative;
+  overflow: hidden;
   border-radius: 10px;
   background-color: #222;
   transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
 }
 
 .immagine-portfolio {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
   transition: transform 0.5s var(--ease-out-expo), opacity 0.4s ease;
   will-change: transform;
 }
@@ -368,19 +593,64 @@ a {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 
+.portfolio-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(237, 242, 242, 0.25);
+  background: rgba(23, 23, 22, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out-expo), color 0.3s ease;
+  z-index: 2;
+}
+
+.portfolio-nav svg { width: 18px; height: 18px; stroke: currentColor; }
+.portfolio-nav:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); transform: translateY(-50%) scale(1.06); }
+.portfolio-nav.prev { left: -10px; }
+.portfolio-nav.next { right: -10px; }
+
+.portfolio-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.portfolio-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(237, 242, 242, 0.25);
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.portfolio-dot.active { background: var(--accent-cyan); width: 22px; border-radius: 4px; }
+
+@media only screen and (max-width: 768px) {
+  .portfolio-nav { display: none; }
+}
+
 .portfolio-grid a:hover .immagine-portfolio { 
   transform: scale(1.06); 
 }
 
 /*-------------------CONTACT ME-------------------*/
-#contact-me { 
-  text-align: center; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-  min-height: 100vh; 
-  padding: 80px 20px 20px 20px;
+#contact-me {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 20px 30px;
 }
 
 .titolo-contact-me {
@@ -396,8 +666,8 @@ a {
 
 .send-mail-contact-me {
   display: inline-block;
-  font-size: clamp(3rem, 8vw, 7.5rem); 
-  font-weight: 800; 
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 700;
   color: var(--accent-cyan); 
   text-decoration: none; 
   line-height: 1;
@@ -406,20 +676,59 @@ a {
 }
 
 .send-mail-contact-me:hover {
-  text-shadow: -8px 8px 0px var(--accent-magenta); 
+  text-shadow: -8px 8px 0px var(--accent-magenta);
   transform: translateY(-4px);
 }
 
-.contengo-firma {
-  margin-top: auto; 
-  padding-top: 80px;
-  padding-bottom: 20px;
+.social-contact-me {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.social-link {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(237, 242, 242, 0.3);
+  padding-bottom: 2px;
+}
+
+.social-link:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .firma {
-  color: rgba(237, 242, 242, 0.6); 
+  color: rgba(237, 242, 242, 0.6);
   font-size: 13px;
   letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.back-to-top {
+  font-family: 'Courier Prime', monospace;
+  font-size: 12.5px;
+  color: rgba(237, 242, 242, 0.6);
+}
+
+.back-to-top:hover {
+  color: var(--accent-cyan);
 }
 
 /*-------------------RESPONSIVE-------------------*/
@@ -464,64 +773,105 @@ a {
   <!-- Cursore Custom -->
   <div class="custom-cursor" id="cursor"></div>
 
-	<section class="law">
+	<a href="#main-content" class="skip-link">Vai al contenuto</a>
+
+	<header>
+		<button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="primaryNav">
+		  <span></span>
+		  <span></span>
+		  <span></span>
+		</button>
+
+		<nav class="menuuu-law" id="primaryNav">
+		 	<div class="dropdown-law">
+		    <a href="#intro" class="dropbtn-law ombra">home</a>
+		  </div>
+		  <div class="dropdown-law">
+		    <a href="#about" class="dropbtn-law ombra">about</a>
+		  </div>
+		  <div class="dropdown-law">
+		    <a href="#portfolio" class="dropbtn-law ombra">portfolio</a>
+		  </div>
+		  <div class="dropdown-law">
+		    <a href="#contact-me" class="dropbtn-law ombra">contact me</a>
+		  </div>
+		</nav>
+	</header>
+
+	<main id="main-content">
 
 		<section id="intro">
-
-			<button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione">
-			  <span></span>
-			  <span></span>
-			  <span></span>
-			</button>
-
-			<nav class="menuuu-law">
-			 	<div class="dropdown-law">
-			    <a href="#intro" class="dropbtn-law ombra">home</a>
-			  </div>
-			  <div class="dropdown-law">
-			    <a href="#about" class="dropbtn-law ombra">about</a>
-			  </div>
-			  <div class="dropdown-law">
-			    <a href="#portfolio" class="dropbtn-law ombra">portfolio</a>
-			  </div>
-			  <div class="dropdown-law">
-			    <a href="#contact-me" class="dropbtn-law ombra">contact me</a>
-			  </div>			  
-			</nav>
 
 			<div class="contengo-titolo-intro">
 				<div>
 					<h1 class="titolo-intro" data-aos="fade-down">Hello,<br> I'm Lorenzo.</h1>
+					<p class="sottotitolo-intro" data-aos="fade-down">Graphic <span class="font-web">&#60;web&#62;</span> Designer</p>
 				</div>
 			</div>
-		
+
+			<a href="#about" class="scroll-cue ombra" aria-label="Scorri per saperne di più">
+			  <span></span>
+			  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+			</a>
+
 		</section>
 
   <section id="about">
   	<div class="contengo-about">
 	  	<div class="contenuto-about" data-aos="fade-down">
 				<h2 class="titolo-about">Graphic <span class="font-web">&#60;web&#62;</span> <span class="font-designer"> Designer</span></h2>
-	    	<p class="testo-about">Cerco di rendere le insegne kebab un po' più carine.<br><br>Mi abbuffo quotidianamente di <span class="testo-diverso"> HTML, CSS, programmi Adobe e la pazienza dei colleghi.</span> Creo grafiche, DEM, banner, landing page e contenuti social con l'obiettivo di non annoiare mai nessuno (sopratutto me stesso).<br>Da anni lavoro nel mondo degli e-commerce: attualmente da Yeppon.it, dove mi destreggio tra <span class="testo-diverso"> newsletter, grafiche web, redesign, foto prodotto</span> e quel magico mondo chiamato <span class="testo-diverso">“PED”</span> (sia social che commerciale).<br><br>Ho collaborato anche con agenzie, e realizzato qualche progetto personale <i>*e no, non ho mai usato Comic Sans.*</i> Sono fan del design essenziale ma non banale, della chiarezza visiva e della soddisfazione del cliente (che non è sempre facile, ma ho la pazienza dalla mia parte). Ah quasi dimenticavo,<span class="testo-diverso"> ho anche vissuto a Londra:</span> trovo che uscire dalla zona di comfort sia il miglior modo per mostrare chi sei veramente.<br><br>Se vuoi lavorare con uno che ci mette il <span class="testo-diverso"> cuore, la testa e qualche battuta</span> per rallegrare l'ambiente, prendiamoci un ☕ insieme!</p>  		
+	    	<div class="testo-about">
+	    		<p>Cerco di rendere le insegne dei kebab un po' più carine — e più in generale, di dare forma chiara a idee che altrimenti resterebbero solo abbozzate.</p>
+	    		<p>Mi abbuffo quotidianamente di<span class="testo-diverso"> HTML, CSS, programmi Adobe e la pazienza dei colleghi.</span> Creo grafiche, DEM, banner, landing page e contenuti social con l'obiettivo di non annoiare mai nessuno (sopratutto me stesso).</p>
+	    		<p>Attualmente lavoro in <span class="testo-diverso">We [are] Digital</span>, agenzia di comunicazione, dove mi destreggio tra grafiche social, newsletter/DEM, landing page e siti. Prima ho passato alcuni anni nel mondo degli e-commerce e ho collaborato con diverse agenzie: ognuna mi ha lasciato qualcosa.</p>
+	    		<p>Sono fan del design essenziale ma non banale, della chiarezza visiva e della soddisfazione del cliente (che non è sempre facile, ma ho la pazienza dalla mia parte) <i>— e no, non ho mai usato Comic Sans.</i></p>
+	    		<p>Ah, quasi dimenticavo:<span class="testo-diverso"> ho anche vissuto a Londra.</span> Trovo che uscire dalla propria zona di comfort sia il modo migliore per scoprire chi sei davvero.</p>
+	    		<p>Se vuoi lavorare con uno che ci mette<span class="testo-diverso"> cuore, testa e qualche battuta</span> per alleggerire l'atmosfera, prendiamoci un ☕ insieme!</p>
+	    	</div>
+	  	</div>
+	  	<div class="tools-marquee" data-aos="fade-down">
+		  	<ul class="tools-row" id="toolsRow">
+		  		<li>Photoshop</li>
+		  		<li>Illustrator</li>
+		  		<li>InDesign</li>
+		  		<li>Premiere Pro</li>
+		  		<li>After Effects</li>
+		  		<li>HTML5</li>
+		  		<li>CSS3</li>
+		  		<li>jQuery</li>
+		  		<li>WordPress</li>
+		  		<li>Dreamweaver</li>
+		  		<li>Sketch</li>
+		  		<li>Adobe XD</li>
+		  		<li>Fotografia prodotto</li>
+		  	</ul>
 	  	</div>
 	  	<div class="cv" data-aos="fade-down">
-	  		<a href="download/CV.pdf" target="_blank" class="download-cv">Scarica CV</a>
-	  	</div>		  	
+	  		<a href="download/CV.pdf" target="_blank" rel="noopener" class="download-cv">Scarica CV</a>
+	  	</div>
+	  	<p class="eyebrow-more" data-aos="fade-down">Cosa faccio</p>
 	  	<div class="more">
 	  		<div class="more-contenuto" data-aos="fade-down">
-	  			<img src="img/icone-branding.png" alt="Branding">	  			
-	  			<h3 class="titolo-more">branding</h3>
-	  			<p class="testo-more">L’idea giusta, con la giusta dose di creatività, il tutto condito dalla conoscenza approfondita dei programmi Adobe Photoshop, Illustrator, Indesign.</p>
+	  			<div class="more-titolo-riga">
+	  				<img src="img/icone-branding.png" alt="">
+	  				<h3 class="titolo-more">branding</h3>
+	  			</div>
+	  			<p class="testo-more">L'idea giusta, con la giusta dose di creatività, il tutto condito dalla conoscenza approfondita dei programmi Adobe Photoshop, Illustrator, Indesign.</p>
 	  		</div>
 	  		<div class="more-contenuto" data-aos="fade-down">
-	  			<img src="img/icone-developer.png" alt="Developer">
-	  			<h3 class="titolo-more">developer</h3>
-	  			<p class="testo-more">Prima la progettazione, poi lo sviluppo.<br>Mi abbuffo di codice HTML5, +CSS3 e jQuery, utilizzando software specifici come Sketch, Atom e Adobe XD.</p>
+	  			<div class="more-titolo-riga">
+	  				<img src="img/icone-developer.png" alt="">
+	  				<h3 class="titolo-more">developer</h3>
+	  			</div>
+	  			<p class="testo-more">Prima la progettazione, poi lo sviluppo. Mi abbuffo di codice HTML5, CSS3 e jQuery, utilizzando software specifici come Sketch e Adobe XD.</p>
 	  		</div>
 	  		<div class="more-contenuto" data-aos="fade-down">
-	  			<img src="img/icone-creativity.png" alt="Creativity">
-	  			<h3 class="titolo-more">creativity</h3>
-	  			<p class="testo-more">Ogni lavoro è diverso, ciò che li accomuna è la creatività e lo studio per arrivare a un determinato risultato.<br>La differenza è che, studiosi si diventa, creativi si nasce!</p>
-	  		</div>	  		  	
+	  			<div class="more-titolo-riga">
+	  				<img src="img/icone-creativity.png" alt="">
+	  				<h3 class="titolo-more">creativity</h3>
+	  			</div>
+	  			<p class="testo-more">Ogni lavoro è diverso, ciò che li accomuna è la creatività e lo studio per arrivare a un determinato risultato. Studiosi si diventa, creativi si nasce.</p>
+	  		</div>
 	  	</div>
   	</div>
   </section>
@@ -529,7 +879,8 @@ a {
   <section id="portfolio">
     <div class="contengo-portfolio" data-aos="fade-down">
         <h2 class="titolo-portfolio">Portfolio</h2>
-        <div class="portfolio-grid">
+        <div class="portfolio-slider">
+        <div class="portfolio-grid" id="portfolioSliderTrack">
             <a href="img/progetto-01.jpg" data-fancybox="gallery" data-caption="Manifesto pubblicitario Outlet"><img src="img/progetto-01-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Manifesto pubblicitario Outlet"></a>
             <a href="img/progetto-02.jpg" data-fancybox="gallery" data-caption="Gift Card Esselunga Yeppon"><img src="img/progetto-02-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Gift Card Esselunga Yeppon"></a>
             <a href="img/progetto-03.jpg" data-fancybox="gallery" data-caption="Manifesto Fiera Bricoday"><img src="img/progetto-03-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Manifesto Fiera Bricoday"></a>
@@ -543,7 +894,15 @@ a {
             <a href="img/progetto-11.jpg" data-fancybox="gallery" data-caption="Flyer A5 promozione Bibes (enoteca online)"><img src="img/progetto-11-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Flyer A5 promozione Bibes (enoteca online)"></a>
             <a href="img/bibes-yeppon.jpg" data-fancybox="gallery" data-caption="Landing Page su Yeppon per Bibes (www.yeppon.it/promo/bibes)"><img src="img/bibes-yeppon-thumb.jpg" loading="lazy" class="immagine-portfolio" alt="Landing Page su Yeppon per Bibes (www.yeppon.it/promo/bibes)"></a>
         </div>
-    </div> 
+        <button type="button" class="portfolio-nav prev" aria-label="Progetto precedente">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="portfolio-nav next" aria-label="Progetto successivo">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        </div>
+        <div class="portfolio-dots" id="portfolioSliderDots"></div>
+    </div>
   </section>
 
 	<section id="contact-me" data-aos="fade-down">
@@ -553,16 +912,20 @@ a {
 				<div class="mail-contact-me">
 					<a href="mailto:lorenzofrancesconi435@gmail.com" class="send-mail-contact-me">Contact Me</a>
 				</div>
+				<div class="social-contact-me">
+					<a href="https://www.linkedin.com/in/lorenzo-francesconi/" target="_blank" rel="noopener" class="social-link ombra">LinkedIn</a>
+					<a href="https://www.behance.net/lorenzofrancesconi" target="_blank" rel="noopener" class="social-link ombra">Behance</a>
+				</div>
 			</div>
 		</div>
-		<div class="contengo-firma">
-			<div class="contenuto-firma">
-				<p class="firma">Lorenzo Francesconi 2026</p>
-			</div>
-		</div>		
 	</section>
 
-	</section>
+	</main>
+
+	<footer>
+		<p class="firma">Lorenzo Francesconi © 2026</p>
+		<a href="#intro" class="back-to-top ombra">Torna su ↑</a>
+	</footer>
 
 <!-- Fancybox JS -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
@@ -576,9 +939,92 @@ a {
   const hamburger = document.getElementById('hamburger');
   const menu = document.querySelector('.menuuu-law');
 
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('active');
+  function toggleMenu(open) {
+    const isOpen = open !== undefined ? open : !menu.classList.contains('active');
+    menu.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  hamburger.addEventListener('click', () => toggleMenu());
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => toggleMenu(false));
   });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') toggleMenu(false);
+  });
+
+  // Stato attivo del link di navigazione in base alla sezione visibile
+  // Usa una sottile fascia vicino al centro dello schermo come linea di trigger:
+  // funziona sia con sezioni più corte che più alte del viewport.
+  (function(){
+    const navLinks = Array.from(document.querySelectorAll('.dropbtn-law'));
+    const sectionMap = new Map();
+    navLinks.forEach(a => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) sectionMap.set(target, a);
+    });
+    if (!sectionMap.size) return;
+
+    function setActive(id) {
+      navLinks.forEach(a => a.classList.toggle('active-link', a.getAttribute('href') === '#' + id));
+    }
+
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, {rootMargin: '-45% 0px -50% 0px', threshold: 0});
+    sectionMap.forEach((a, section) => navIO.observe(section));
+
+    // All'apertura diretta su una sezione (refresh a metà pagina) imposta subito quella corretta
+    let closest = null, closestDist = Infinity;
+    sectionMap.forEach((a, section) => {
+      const dist = Math.abs(section.getBoundingClientRect().top);
+      if (dist < closestDist) { closestDist = dist; closest = section; }
+    });
+    if (closest) setActive(closest.id);
+  })();
+
+  // Marquee competenze: raddoppia le voci per lo scroll infinito
+  (function(){
+    const row = document.getElementById('toolsRow');
+    if (!row) return;
+    const original = Array.from(row.children).map(li => li.outerHTML).join('');
+    row.insertAdjacentHTML('beforeend', original);
+  })();
+
+  // Portfolio slider (frecce + puntini)
+  (function(){
+    const track = document.getElementById('portfolioSliderTrack');
+    const dotsWrap = document.getElementById('portfolioSliderDots');
+    if(!track || !dotsWrap) return;
+    const cards = Array.from(track.children);
+    const dots = cards.map((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Vai al progetto ' + (i + 1));
+      dot.addEventListener('click', () => {
+        cards[i].scrollIntoView({behavior: 'smooth', inline: 'start', block: 'nearest'});
+      });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+    document.querySelectorAll('.portfolio-nav').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dir = btn.classList.contains('next') ? 1 : -1;
+        track.scrollBy({left: dir * (cards[0].offsetWidth + 25), behavior: 'smooth'});
+      });
+    });
+    const portfolioIO = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting);
+      if(!visible.length) return;
+      const top = visible.reduce((a, b) => b.intersectionRatio > a.intersectionRatio ? b : a);
+      const idx = cards.indexOf(top.target);
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, {root: track, threshold: 0.6});
+    cards.forEach(c => portfolioIO.observe(c));
+  })();
 
   // Cursore Custom dinamico
   const cursor = document.getElementById('cursor');
@@ -597,7 +1043,8 @@ AOS.init({
   duration: 800,
   easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
   once: false,
-  mirror: true
+  mirror: true,
+  disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 </script>
 

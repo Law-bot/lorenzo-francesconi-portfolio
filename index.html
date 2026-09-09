@@ -913,7 +913,11 @@ header {
     width: 100%;
     margin: 0;
     white-space: normal;
-    font-size: clamp(2.4rem, 11vw, 4.2rem);
+    /* Stessa dimensione del titolo hero (.titolo-intro: 4.5rem fissi su
+       mobile). Le parole qui sono impilate una per riga quindi lo spazio
+       orizzontale non è un vincolo: verificato che anche la parola più
+       lunga ("Designer") ci sta comodamente a questa dimensione. */
+    font-size: clamp(4rem, 20vw, 4.5rem);
   }
   .titolo-about .parola-scroll { display: block; }
   /* Il titolo impilato su 3 righe è molto più alto: più margine statico
@@ -1870,6 +1874,14 @@ header {
   border-color: var(--accent-cyan);
 }
 
+/* Footer tutto sullo sfondo azzurro accento: è lo "stacco" forte richiesto
+   tra la griglia progetti e la CTA finale, un blocco di colore pieno invece
+   di una fascia decorativa. Il colore bleed a piena larghezza (il footer
+   resta max-width:1200px per i contenuti) è dato dallo pseudo-elemento
+   ::before, stessa tecnica già usata per lo sfondo dell'About. Tutti i
+   colori del testo dentro al footer sono invertiti di conseguenza: dove
+   prima c'era testo chiaro/ciano su sfondo scuro, ora è testo scuro (o
+   magenta per gli accenti, che resta leggibile anche sul ciano). */
 footer {
   max-width: 1200px;
   margin: 0 auto;
@@ -1877,15 +1889,27 @@ footer {
   z-index: 6;
 }
 
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  background: var(--accent-cyan);
+  z-index: -1;
+}
+
 .footer-cta {
   max-width: 720px;
   margin: 0 auto;
-  padding: clamp(70px, 10vw, 120px) clamp(20px, 5vw, 64px) clamp(50px, 7vw, 80px);
+  padding: clamp(70px, 10vw, 120px) clamp(20px, 5vw, 64px) clamp(40px, 6vw, 64px);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 26px;
+  gap: clamp(40px, 6vw, 64px);
 }
 
 .footer-cta-eyebrow {
@@ -1893,7 +1917,7 @@ footer {
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-cyan);
+  color: var(--bg-color);
   margin: 0;
 }
 
@@ -1902,9 +1926,13 @@ footer {
   font-style: italic;
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   line-height: 1.55;
-  color: var(--text-main);
+  color: var(--bg-color);
   margin: 0;
   max-width: 640px;
+}
+
+.footer-cta-testo .testo-diverso {
+  color: var(--accent-magenta);
 }
 
 .footer-cta-mail {
@@ -1912,10 +1940,9 @@ footer {
   font-size: clamp(2.4rem, 6vw, 4.2rem);
   font-weight: 700;
   letter-spacing: var(--tracking-tight);
-  color: var(--accent-cyan);
+  color: var(--bg-color);
   text-decoration: none;
   line-height: 1;
-  margin-top: 6px;
   text-shadow: -6px 6px 0px rgba(250, 27, 89, 0);
   transition: text-shadow 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo), color 0.3s ease;
 }
@@ -1955,8 +1982,8 @@ footer {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bg-color);
-  background-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background-color: var(--bg-color);
   text-decoration: none;
   padding: 13px 24px;
   border-radius: 100px;
@@ -1967,7 +1994,7 @@ footer {
 
 .footer-cv-link:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(44, 231, 199, 0.25);
+  box-shadow: 0 10px 25px rgba(23, 23, 22, 0.25);
 }
 
 .footer-social-link {
@@ -1975,14 +2002,14 @@ footer {
   font-size: 12.5px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--text-main);
+  color: var(--bg-color);
   text-decoration: none;
-  border-bottom: 1px solid rgba(237, 242, 242, 0.3);
+  border-bottom: 1px solid rgba(23, 23, 22, 0.35);
   padding-bottom: 2px;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.footer-social-link:hover { color: var(--accent-cyan); border-color: var(--accent-cyan); }
+.footer-social-link:hover { color: var(--accent-magenta); border-color: var(--accent-magenta); }
 
 .footer-bottom {
   display: flex;
@@ -1991,11 +2018,11 @@ footer {
   align-items: center;
   gap: 12px;
   padding: 24px clamp(20px, 5vw, 64px) 30px;
-  border-top: 1px solid rgba(237, 242, 242, 0.1);
+  border-top: 1px solid rgba(23, 23, 22, 0.15);
 }
 
 .firma {
-  color: rgba(237, 242, 242, 0.6);
+  color: rgba(23, 23, 22, 0.65);
   font-size: 13px;
   letter-spacing: 0.05em;
   margin: 0;
@@ -2004,11 +2031,11 @@ footer {
 .back-to-top {
   font-family: 'Courier Prime', monospace;
   font-size: 12.5px;
-  color: rgba(237, 242, 242, 0.6);
+  color: rgba(23, 23, 22, 0.65);
 }
 
 .back-to-top:hover {
-  color: var(--accent-cyan);
+  color: var(--accent-magenta);
 }
 
 /*-------------------RESPONSIVE-------------------*/
@@ -2020,8 +2047,9 @@ footer {
 @media only screen and (max-width: 480px) {
   /* Il menu non deve mai arrivare a toccare le icone ai lati: gli do un
      tetto di larghezza, così se il testo non ci sta va a capo dentro la
-     pillola invece di allargarla verso i cerchi. */
-  .menuuu-law { max-width: 190px; }
+     pillola invece di allargarla verso i cerchi. Abbastanza largo da
+     non spezzare "ecco chi sono" su 3 righe (max 2). */
+  .menuuu-law { max-width: 230px; }
   .dropdown-law { text-align: center; }
 }
 
@@ -2030,8 +2058,8 @@ footer {
   .header-icon { width: 36px; height: 36px; }
   .header-icon svg { width: 15px; height: 15px; }
   .header-icon-cv-label { font-size: 12px; }
-  .menuuu-law { padding: 5px 5px; max-width: 160px; }
-  .dropdown-law { padding: 7px 7px; }
+  .menuuu-law { padding: 5px 5px; max-width: 210px; }
+  .dropdown-law { padding: 7px 8px; }
   .dropbtn-law { font-size: 12.5px; }
 }
 </style>
@@ -2197,7 +2225,6 @@ footer {
       <div class="masonryA" id="portfolioMasonry"></div>
     </div>
   </section>
-
 
 	</main>
 
